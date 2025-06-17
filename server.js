@@ -2,6 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views")); // ✅ Important for correct path resolution
 
 // Session middleware
 app.use(session({
@@ -23,7 +25,12 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// Routes
+// Home route
+app.get('/', (req, res) => {
+  res.render('pages/home'); // ✅ remove .ejs
+});
+
+// Routes (Uncomment when ready)
 // app.use("/", require("./routes/index"));
 // app.use("/student", require("./routes/student"));
 // app.use("/college", require("./routes/college"));

@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views")); // ✅ Important for correct path resolution
+app.set("views", path.join(__dirname, "views"));
 
 // Session middleware
 app.use(session({
@@ -25,12 +25,30 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// Home route
-// app.get('/', (req, res) => {
-//   res.render('pages/home'); // ✅ remove .ejs
-// });
+app.get('/test-student-signup', async (req, res) => {
+    const Student = require('./models/Student');
+  
+    const testStudent = new Student({
+      name: "Test Student",
+      email: "teststudent@example.com",
+      password: "123456",
+      phone: "9999999999",
+      regd_no: "REG123456",
+      semester: 6
+      // You can add `college_id` later if needed
+    });
+  
+    try {
+      await testStudent.save();
+      res.send("✅ Test student signed up and added to database.");
+    } catch (error) {
+      console.error("❌ Error adding test student:", error.message);
+      res.status(500).send("Failed to insert test student.");
+    }
+  });
+  
 
-// Routes (Uncomment when ready)
+// Routes
 const indexRoutes = require('./routes/index');
 const studentRoutes = require('./routes/student');
 const collegeRoutes = require('./routes/college');

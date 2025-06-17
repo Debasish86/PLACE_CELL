@@ -1,7 +1,12 @@
-const express = require("express");
+// 📁 Path: routes/student.js
+const express = require('express');
 const router = express.Router();
+const studentController = require('../controllers/studentController');
 
-router.get("/login/student", (req, res) => res.render("pages/loginStudent"));
-router.get("/signup/student", (req, res) => res.render("pages/signupStudent"));
+// Student Signup & Login
+router.get('/signup', studentController.getSignupPage);
+router.post('/signup/student', studentController.signupStudent);
+router.get('/login', studentController.getLoginPage);
+router.post('/login', studentController.loginStudent);
 
 module.exports = router;

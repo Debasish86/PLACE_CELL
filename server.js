@@ -26,17 +26,28 @@ app.use(session({
 }));
 
 // Home route
-app.get('/', (req, res) => {
-  res.render('pages/home'); // ✅ remove .ejs
-});
+// app.get('/', (req, res) => {
+//   res.render('pages/home'); // ✅ remove .ejs
+// });
 
 // Routes (Uncomment when ready)
-// app.use("/", require("./routes/index"));
-// app.use("/student", require("./routes/student"));
-// app.use("/college", require("./routes/college"));
-// app.use("/company", require("./routes/company"));
-// app.use("/placement", require("./routes/placement"));
-// app.use("/statistics", require("./routes/statistics"));
+const indexRoutes = require('./routes/index');
+const studentRoutes = require('./routes/student');
+const collegeRoutes = require('./routes/college');
+const companyRoutes = require('./routes/company');
+const trainingRoutes = require('./routes/training');
+const placementRoutes = require('./routes/placement');
+const statisticsRoutes = require('./routes/statistics');
+const blogRoutes = require('./routes/blog');
+
+app.use("/", indexRoutes);
+app.use("/", studentRoutes);
+app.use("/", collegeRoutes);
+app.use("/", companyRoutes);
+app.use("/", trainingRoutes);
+app.use("/", placementRoutes);
+app.use("/", statisticsRoutes);
+app.use("/", blogRoutes);
 
 // Start server
 app.listen(PORT, () => {

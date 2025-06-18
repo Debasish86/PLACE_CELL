@@ -19,7 +19,7 @@ exports.signupStudent = async (req, res) => {
       college_id
     });
     await newStudent.save();
-    res.redirect('/login/student');
+    res.redirect('/home');
   } catch (error) {
     console.error(error);
     res.status(500).send('Signup failed');
@@ -34,11 +34,13 @@ exports.loginStudent = async (req, res) => {
   try {
     const { email, password } = req.body;
     const student = await Student.findOne({ email });
+    
     if (!student || student.password !== password) {
       return res.status(401).send('Invalid credentials');
     }
+
     req.session.student = student;
-    res.render('pages/loginStudent', { student });
+    res.redirect('/'); // Redirect to home page after successful login
   } catch (error) {
     console.error(error);
     res.status(500).send('Login failed');

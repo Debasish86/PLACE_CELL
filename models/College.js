@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const companySchema = new mongoose.Schema({
+const collegeSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
   unicode: String
 });
 
-module.exports = mongoose.model("Company", companySchema);
+module.exports = mongoose.model("College", collegeSchema);

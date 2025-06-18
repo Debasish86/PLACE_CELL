@@ -1,7 +1,11 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const collegeController = require('../controllers/collegeController');
 
-router.get("/login/college", (req, res) => res.render("pages/loginCollege"));
-router.get("/signup/college", (req, res) => res.render("pages/signupCollege"));
+router.get('/signup/college', collegeController.getSignupPage);
+router.post('/signup/college', collegeController.signupCollege);
+
+router.get('/login/college', collegeController.getLoginPage);
+router.post('/login/college', collegeController.loginCollege);
 
 module.exports = router;

@@ -429,6 +429,30 @@ body {
     align-items: center;
 }
 
+
+.stat-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    margin: 6px 0;
+}
+
+.stat-card canvas {
+    margin-top: 10px;
+    max-width: 180px;
+}
+
 /* Style for each card box */
 .stat-card {
     width: 100%;
@@ -472,7 +496,7 @@ body {
 .story-card {
     width: 100%;
     max-width: 300px;
-    height: 150px;
+    height: 180px;
     background-color: #1e1e1e;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -664,6 +688,7 @@ body {
     color: #2563eb;
 }
 
+
 /* Top Companies Section */
 .top-companies {
     padding: 5rem 0;
@@ -700,7 +725,7 @@ body {
 .company-logo {
     width: 4rem;
     height: 4rem;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    background: white;
     border-radius: 0.75rem;
     display: flex;
     align-items: center;
@@ -756,7 +781,7 @@ body {
 }
 
 .company-btn:hover {
-    background: #2563eb;
+    background: #162647;
 }
 
 /* Footer */

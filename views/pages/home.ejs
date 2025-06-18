@@ -14,8 +14,11 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <h1><span class="logo-accent">Place</span>Cell</h1>
+                    <a href="/" style="text-decoration: none; color: inherit;">
+                        <h1><span class="logo-accent">Place</span>Cell</h1>
+                    </a>
                 </div>
+                
                 
                 <nav class="nav-desktop">
                     <a href="/training" class="nav-link">Training</a>
@@ -92,10 +95,39 @@
         </div>
 
         <div class="stats-grid" id="statsGrid">
-            <div class="stat-card"></div>
-            <div class="stat-card"></div>
-            <div class="stat-card"></div>
-            <div class="stat-card"></div>
+            <!-- Box 1: Eligible vs Placed Students -->
+<div class="stat-card">
+    <h3>Placement Overview</h3>
+    <p>Total Eligible Students: <strong>320</strong></p>
+    <p>Total Placed Students: <strong>285</strong></p>
+    <canvas id="placementChart" width="200" height="200"></canvas>
+</div>
+
+<!-- Box 2: Companies Visited -->
+<div class="stat-card">
+    <h3>Company Visits</h3>
+    <p>Total Companies Visited: <strong>85</strong></p>
+    <ul>
+        <li>Product Based: 25</li>
+        <li>Service Based: 60</li>
+    </ul>
+</div>
+
+<!-- Box 3: Packages -->
+<div class="stat-card">
+    <h3>Package Details</h3>
+    <p>Highest Package: <strong>₹45 LPA</strong></p>
+    <p>Median Package: <strong>₹8.5 LPA</strong></p>
+    <p>Average Package: <strong>₹10.2 LPA</strong></p>
+</div>
+
+<!-- Box 4: Fun / Highlight -->
+<div class="stat-card">
+    <h3>Interesting Highlight</h3>
+    <p>One student received offers from <strong>9 different companies</strong>!</p>
+    <p>Campus-to-Career conversion rate: <strong>89%</strong></p>
+    <p>🔥 Fastest Offer: <strong>3 hours</strong> after interview!</p>
+</div>
         </div>
     </div>
 </section>
@@ -111,11 +143,59 @@
         </div>
         
         <div class="stories-grid">
-            <div class="story-card"></div>
-            <div class="story-card"></div>
-            <div class="story-card"></div>
-            <div class="story-card"></div>
+            <div class="story-card">
+                <div style="display: flex; align-items: center; padding: 1rem;">
+                    <div class="story-avatar">DR</div>
+                    <div class="story-info">
+                        <h4>Deepak Reddy</h4>
+                        <p>Placed at <span style="color: #3b82f6;">Cyient</span></p>
+                    </div>
+                </div>
+                <div class="story-quote" style="padding: 0 1rem 1rem;">
+                    The training quality was top-notch, with a good balance between theory and practice.
+                </div>
+            </div>
+        
+            <div class="story-card">
+                <div style="display: flex; align-items: center; padding: 1rem;">
+                    <div class="story-avatar">AK</div>
+                    <div class="story-info">
+                        <h4>Anjali Kumari</h4>
+                        <p>Placed at <span style="color: #3b82f6;">Infosys</span></p>
+                    </div>
+                </div>
+                <div class="story-quote" style="padding: 0 1rem 1rem;">
+                    I cracked my placement with ease thanks to the mock interviews and resume reviews.
+                </div>
+            </div>
+        
+            <div class="story-card">
+                <div style="display: flex; align-items: center; padding: 1rem;">
+                    <div class="story-avatar">RS</div>
+                    <div class="story-info">
+                        <h4>Rohan Singh</h4>
+                        <p>Placed at <span style="color: #3b82f6;">Wipro</span></p>
+                    </div>
+                </div>
+                <div class="story-quote" style="padding: 0 1rem 1rem;">
+                    Great learning platform! The LMS and mentors helped me prepare from anywhere.
+                </div>
+            </div>
+        
+            <div class="story-card">
+                <div style="display: flex; align-items: center; padding: 1rem;">
+                    <div class="story-avatar">NS</div>
+                    <div class="story-info">
+                        <h4>Nikita Sharma</h4>
+                        <p>Placed at <span style="color: #3b82f6;">TCS</span></p>
+                    </div>
+                </div>
+                <div class="story-quote" style="padding: 0 1rem 1rem;">
+                    The placement support team was incredibly helpful throughout the process.
+                </div>
+            </div>
         </div>
+        
     </div>
 </section>
 
@@ -139,16 +219,36 @@
         </div>
         
         <div class="blogs-grid">
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-            <div class="blog-card"></div>
-          
+            <div class="blog-card">
+                <img src="images/blog1.jpg" alt="Blog 1">
+                <h3>How to Ace Your Interview</h3>
+                <p>Top tips and tricks to make a lasting impression.</p>
+            </div>
+            <div class="blog-card">
+                <img src="images/blog2.jpg" alt="Blog 2">
+                <h3>Resume Writing 101</h3>
+                <p>Craft a resume that grabs recruiter attention.</p>
+            </div>
+            <div class="blog-card">
+                <img src="images/blog3.jpg" alt="Blog 3">
+                <h3>Top 10 Hiring Trends in 2025</h3>
+                <p>Stay ahead by knowing what's hot in hiring.</p>
+            </div>
+            <div class="blog-card">
+                <img src="images/blog4.jpg" alt="Blog 4">
+                <h3>Career in Data Science</h3>
+                <p>Why data science is one of the most in-demand careers.</p>
+            </div>
+            <div class="blog-card">
+                <img src="images/blog5.jpg" alt="Blog 5">
+                <h3>Work From Home Hacks</h3>
+                <p>Boost your productivity with these remote work tips.</p>
+            </div>
+            <div class="blog-card">
+                <img src="images/blog6.jpg" alt="Blog 6">
+                <h3>Build a Great LinkedIn Profile</h3>
+                <p>Attract opportunities by optimizing your profile.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -167,15 +267,152 @@
             <div class="companies-grid" id="companiesGrid">
                 <!-- Companies will be loaded dynamically -->
                 <div class="companies-grid" id="companiesGrid">
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
-                    <div class="company-card"></div>
+                    <div class="companies-grid" id="companiesGrid">
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo1.png" alt="TCS" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>TCS</h3>
+                                    <p>IT Services</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Global leader in IT services and consulting</div>
+                            </div>
+                            <a href="https://www.tcs.com/careers" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo2.png" alt="Wipro" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>Wipro</h3>
+                                    <p>Technology</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Innovation-led digital transformation</div>
+                            </div>
+                            <a href="https://careers.wipro.com" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo3.png" alt="Infosys" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>Infosys</h3>
+                                    <p>Consulting & IT</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Building tomorrow’s enterprise</div>
+                            </div>
+                            <a href="https://www.infosys.com/careers/" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo4.png" alt="Accenture" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>Accenture</h3>
+                                    <p>Consulting</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Global professional services company</div>
+                            </div>
+                            <a href="https://www.accenture.com/in-en/careers" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo5.png" alt="Capgemini" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>Capgemini</h3>
+                                    <p>IT Consulting</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Technology and engineering services</div>
+                            </div>
+                            <a href="https://www.capgemini.com/careers/" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo6.png" alt="Cyient" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>Cyient</h3>
+                                    <p>Engineering</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Engineering and technology solutions</div>
+                            </div>
+                            <a href="https://www.cyient.com/careers" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo7.png" alt="HCL" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>HCL</h3>
+                                    <p>IT Services</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Next-gen digital transformation</div>
+                            </div>
+                            <a href="https://www.hcltech.com/careers" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo8.png" alt="Tech Mahindra" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>Tech Mahindra</h3>
+                                    <p>IT & Telecom</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Driving digital transformation</div>
+                            </div>
+                            <a href="https://careers.techmahindra.com" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    
+                        <div class="company-card">
+                            <div class="company-header">
+                                <img src="/images/clogo/logo9.png" alt="IBM" class="company-logo" />
+                                <div class="company-info">
+                                    <h3>IBM</h3>
+                                    <p>Tech & AI</p>
+                                </div>
+                            </div>
+                            <div class="company-details">
+                                <div class="company-detail">Building smarter businesses with AI</div>
+                            </div>
+                            <a href="https://www.ibm.com/employment" target="_blank">
+                                <button class="company-btn">Visit Careers</button>
+                            </a>
+                        </div>
+                    </div>
+                    
                 </div>
                 
             </div>
@@ -284,5 +521,6 @@
     </footer>
 
     <!-- <script src="script.js"></script> -->
+    
 </body>
 </html>

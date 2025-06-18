@@ -689,6 +689,115 @@ body {
 }
 
 
+
+/* Section styling */
+.recent-blogs {
+    padding: 40px 0;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Container layout */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Header with title and button */
+.section-header-with-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* View All button styling */
+.view-all-btn {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-all-btn:hover {
+    background-color: #ffffff;
+    color: #0a0a0a;
+}
+
+/* Grid layout for blog cards */
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Individual blog card styling */
+.blog-card {
+    display: block;
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Hover effect for blog cards */
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
+}
+
+/* Headings inside cards */
+.blog-card h3 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+}
+
+/* Paragraph inside cards */
+.blog-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin: 0;
+}
+
+/* Scroll/fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Top Companies Section */
 .top-companies {
     padding: 5rem 0;

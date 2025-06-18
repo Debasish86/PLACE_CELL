@@ -1,4 +1,3 @@
-// 📁 Path: controllers/studentController.js
 const Student = require('../models/Student');
 
 exports.getSignupPage = (req, res) => {
@@ -9,6 +8,14 @@ exports.signupStudent = async (req, res) => {
   try {
     const { name, email, password, phone, regd_no, semester } = req.body;
     const college_id = req.body.college_id || null;
+
+    // Check if student already exists
+    const existing = await Student.findOne({ email });
+    if (existing) {
+      req.flash('error', 'Email already registered');
+      return res.redirect('/signup');
+    }
+
     const newStudent = new Student({
       name,
       email,
@@ -18,11 +25,14 @@ exports.signupStudent = async (req, res) => {
       semester,
       college_id
     });
+
     await newStudent.save();
-    res.redirect('/home');
+    req.flash('success', 'Signup successful! Please login.');
+    res.redirect('/login');
   } catch (error) {
     console.error(error);
-    res.status(500).send('Signup failed');
+    req.flash('error', 'Signup failed');
+    res.redirect('/signup');
   }
 };
 
@@ -34,15 +44,32 @@ exports.loginStudent = async (req, res) => {
   try {
     const { email, password } = req.body;
     const student = await Student.findOne({ email });
-    
+
     if (!student || student.password !== password) {
-      return res.status(401).send('Invalid credentials');
+      req.flash('error', 'Invalid email or password');
+      return res.redirect('/login');
     }
 
-    req.session.student = student;
-    res.redirect('/'); // Redirect to home page after successful login
+    // Save student info to session
+    req.session.student = {
+      id: student._id,
+      name: student.name,
+      email: student.email
+    };
+
+    req.flash('success', `Welcome, ${student.name}!`);
+    res.redirect('/'); // home page
   } catch (error) {
     console.error(error);
-    res.status(500).send('Login failed');
+    req.flash('error', 'Login failed');
+    res.redirect('/login');
   }
+};
+
+// Optional: Logout controller
+exports.logoutStudent = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) console.error(err);
+    res.redirect('/login');
+  });
 };

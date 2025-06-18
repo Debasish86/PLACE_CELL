@@ -1,4 +1,3 @@
-// 📁 Path: controllers/companyController.js
 const Company = require('../models/Company');
 
 exports.getSignupPage = (req, res) => {
@@ -9,6 +8,12 @@ exports.signupCompany = async (req, res) => {
   try {
     const { name, email, password, phone, companyCode } = req.body;
 
+    const existing = await Company.findOne({ email });
+    if (existing) {
+      req.flash('error_msg', 'Email is already registered.');
+      return res.redirect('/company/signup');
+    }
+
     const newCompany = new Company({
       name,
       email,
@@ -18,10 +23,12 @@ exports.signupCompany = async (req, res) => {
     });
 
     await newCompany.save();
-    res.redirect('/home'); // Redirect to home after signup
+    req.flash('success_msg', 'Company registered successfully. Please login.');
+    res.redirect('/company/login');
   } catch (error) {
     console.error(error);
-    res.status(500).send('Signup failed');
+    req.flash('error_msg', 'Signup failed. Please try again.');
+    res.redirect('/company/signup');
   }
 };
 
@@ -35,13 +42,16 @@ exports.loginCompany = async (req, res) => {
     const company = await Company.findOne({ email });
 
     if (!company || company.password !== password) {
-      return res.status(401).send('Invalid credentials');
+      req.flash('error_msg', 'Invalid email or password.');
+      return res.redirect('/company/login');
     }
 
     req.session.company = company;
-    res.redirect('/'); // Redirect to home after login
+    req.flash('success_msg', 'Login successful.');
+    res.redirect('/');
   } catch (error) {
     console.error(error);
-    res.status(500).send('Login failed');
+    req.flash('error_msg', 'Login failed. Please try again.');
+    res.redirect('/company/login');
   }
 };

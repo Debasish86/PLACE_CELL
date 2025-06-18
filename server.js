@@ -3,6 +3,7 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 const path = require("path");
+const flash = require('connect-flash');
 require("dotenv").config();
 
 const app = express();
@@ -10,7 +11,20 @@ const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB
 connectDB();
+app.use(session({
+  secret: 'yourSecretKey',
+  resave: false,
+  saveUninitialized: false
+}));
 
+app.use(flash());
+
+// To make flash messages accessible in all views
+app.use((req, res, next) => {
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
+  next();
+});
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

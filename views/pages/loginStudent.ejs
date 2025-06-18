@@ -15,7 +15,14 @@
       <img src="/images/logo.png" alt="PlaceCell Logo" class="site-logo" />
     </a>
   </header>
-
+  <% if (success) { %>
+    <div class="alert success"><%= success %></div>
+  <% } %>
+  
+  <% if (error) { %>
+    <div class="alert error"><%= error %></div>
+  <% } %>
+  
   <!-- Register Form -->
   <div class="register-container">
     <div class="logo">Place<span>Cell</span></div>

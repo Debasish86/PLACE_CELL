@@ -256,6 +256,38 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
+  .stat-title {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .stat-text {
+    color: white;
+    padding: 5px 20px;
+    font-size: 16px;
+  }
+  
+  .bar-container {
+    padding: 10px 20px;
+  }
+  
+  .bar {
+    background-color: #333;
+    border-radius: 5px;
+    margin: 5px 0 15px 0;
+    height: 20px;
+    width: 100%;
+  }
+  
+  .fill-bar {
+    height: 100%;
+    width: 0;
+    background-color: #00d8a4;
+    border-radius: 5px;
+    transition: width 1s ease-out;
+  }
+  
   
   /* placement-records */
   .placement-section {

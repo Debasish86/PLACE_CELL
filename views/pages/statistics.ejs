@@ -75,19 +75,60 @@
   </section>
 
 
-  <!-- boxes -->
   <section class="stats-section" id="statistics">
     <div class="stats-row">
-      <div class="stat-box"></div>
-      <div class="stat-box"></div>
-      <div class="stat-box"></div>
+      <!-- Placement Overview -->
+      <div class="stat-box">
+        <h3 class="stat-title">Placement Overview</h3>
+        <p class="stat-text">Total Eligible Students: <span id="eligible-count">0</span></p>
+        <p class="stat-text">Total Placed Students: <span id="placed-count">0</span></p>
+      </div>
+  
+      <!-- Company Visits -->
+      <div class="stat-box">
+        <h3 class="stat-title">Company Visits</h3>
+        <p class="stat-text">Total Companies Visited: <span id="visited-count">0</span></p>
+        <p class="stat-text">Product Based: <span id="product-count">0</span></p>
+        <p class="stat-text">Service Based: <span id="service-count">0</span></p>
+      </div>
+  
+      <!-- Package Details -->
+      <div class="stat-box">
+        <h3 class="stat-title">Package Details</h3>
+        <div class="bar-container">
+          <label>Highest Package</label>
+          <div class="bar"><div id="highest-bar" class="fill-bar"></div></div>
+          <label>Median Package</label>
+          <div class="bar"><div id="median-bar" class="fill-bar"></div></div>
+          <label>Average Package</label>
+          <div class="bar"><div id="average-bar" class="fill-bar"></div></div>
+        </div>
+      </div>
     </div>
+  
     <div class="stats-row">
-      <div class="stat-box"></div>
-      <div class="stat-box"></div>
-      <div class="stat-box"></div>
+      <div class="stat-box">
+        <h3 class="stat-title">Interesting Highlight</h3>
+        <p class="stat-text">Offers from <span id="offer-count">0</span> companies</p>
+        <p class="stat-text">Conversion Rate: <span id="conversion-rate">0%</span></p>
+        <p class="stat-text">Fastest Offer: <span id="fastest-offer">0 hours</span></p>
+      </div>
+  
+      <div class="stat-box">
+        <h3 class="stat-title">Coming Soon</h3>
+        <p class="stat-text">More visual data in next update!</p>
+      </div>
+  
+      <div class="stat-box">
+        <h3 class="stat-title">Coming Soon</h3>
+        <p class="stat-text">Custom charts will be added here.</p>
+      </div>
     </div>
   </section>
+  
+  <!-- Link your JavaScript -->
+  <script src="/js/stats.js" defer></script>
+  
   
   <!-- placement records -->
   <section class="placement-section">
@@ -256,5 +297,6 @@
     </footer>
 
     <!-- <script src="script.js"></script> -->
+    <script src="/js/statistics.js" defer></script>
 </body>
 </html>

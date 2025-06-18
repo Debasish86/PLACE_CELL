@@ -1,8 +1,18 @@
-const express = require("express");
+// 📁 Path: routes/companyRoutes.js
+const express = require('express');
 const router = express.Router();
+const companyController = require('../controllers/companyController');
 
-router.get("/login/company", (req, res) => res.render("pages/loginCompany"));
-router.get("/signup/company", (req, res) => res.render("pages/signupCompany"));
-router.get("/hirewithus", (req, res) => res.render("pages/hireWithUs"));
+// GET signup page
+router.get('/signup/company', companyController.getSignupPage);
+
+// POST signup form
+router.post('/signup/company', companyController.signupCompany);
+
+// GET login page
+router.get('/login/company', companyController.getLoginPage);
+
+// POST login form
+router.post('/login/company', companyController.loginCompany);
 
 module.exports = router;

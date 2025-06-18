@@ -8,47 +8,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header class="site-header">
-  <a href="index.html">
-    <img src="images/logo.png" alt="PlaceCell Logo" class="site-logo" />
-  </a>
-</header>
 
-
-  
+  <!-- Header -->
+  <header class="site-header">
+    <a href="/">
+      <img src="/images/logo.png" alt="PlaceCell Logo" class="site-logo" />
+    </a>
+  </header>
 
   <!-- Register Form -->
- <!-- Replace old register form with this inside <body> -->
-
-<!-- Register Form (Updated Design) -->
-<div class="register-container">
-  <div class="logo">Place<span>Cell</span></div>
-  <div class="form-container">
-    <div class="form-card">
-      <div class="form-header">
-        <h2>Hi Learner,</h2>
-        <a href="#">LOGIN</a>
-      </div>
-      <p>Welcome on Your Placement Journey</p>
-      <form id="registerForm">
-        <label>Email*</label>
-        <input type="email" placeholder="Enter your Email" required />
-        <label>Password*</label>
-        <input type="password" placeholder="Enter your Password" required />
-         <a href="#" class="forgot-password">Forgot Password?</a>
-        <div class="login-section">
-          <button class="login-btn">LOGIN</button>
-          <p>New to PlaceCell? <a href="#">Register Here</a></p>
+  <div class="register-container">
+    <div class="logo">Place<span>Cell</span></div>
+    <div class="form-container">
+      <div class="form-card">
+        <div class="form-header">
+          <h2>Hi Learner,</h2>
+          <a href="/signup/student">REGISTER</a>
         </div>
-      </form>
-    </div>
-      </form>
+        <p>Welcome on Your Placement Journey</p>
+        
+        <form id="registerForm" action="/login/student" method="POST">
+          <label>Email*</label>
+          <input type="email" name="email" placeholder="Enter your Email" required />
+          
+          <label>Password*</label>
+          <input type="password" name="password" placeholder="Enter your Password" required />
+          
+          <a href="#" class="forgot-password">Forgot Password?</a>
+          
+          <div class="login-section">
+            <button type="submit" class="login-btn">LOGIN</button>
+            <p>New to PlaceCell? <a href="/signup/student">Register Here</a></p>
+          </div>
+        </form>
+
+      </div>
     </div>
   </div>
-</div>
-
-
-
 
   <!-- Hero Section -->
   <section class="hero">
@@ -63,6 +59,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
+
         <div class="footer-section">
           <h3 class="footer-logo">Place<span class="logo-accent">Cell</span></h3>
           <p class="footer-description">
@@ -121,6 +118,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>

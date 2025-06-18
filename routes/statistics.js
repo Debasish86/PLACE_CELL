@@ -1,6 +1,8 @@
-const express = require("express");
+// 📁 routes/statisticsRoutes.js
+const express = require('express');
 const router = express.Router();
+const statisticsController = require('../controllers/statisticsController');
 
-router.get("/statistics", (req, res) => res.render("pages/statistics"));
+router.get('/statistics', statisticsController.getStatisticsPage);
 
 module.exports = router;

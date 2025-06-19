@@ -89,132 +89,577 @@
           <h2 class="placement-title">Placement Training<br />Program</h2>
           <button class="register-btn">Register Now</button>
         </div>
-        <div class="placement-box"></div>
-      </div>
+        <div class="placement-box">
+  <img src="images\TLogo.jpg" alt="3D Illustration" class="placement-img" />
+</div>
     </section>
 
     <!-- Popular Courses Section -->
-    <section class="popular-courses">
-      <div class="container">
-        <h2 class="section-title">Popular Courses</h2>
+   <section class="popular-courses">
+  <div class="container">
+    <h2 class="section-title">Popular Courses</h2>
 
-        <div class="tabs">
-          <button class="tab active">All Programme</button>
-          <button class="tab">DSA</button>
-          <button class="tab">Apptitude & Reasoning</button>
-          <button class="tab">Data Science</button>
-          <button class="tab">Operating System</button>
-          <button class="tab">Computer Networking</button>
-          <button class="tab">Soft Skills</button>
-        </div>
+    <div class="tabs">
+      <button class="tab active" onclick="showCourses('all', this)">All Programmes</button>
+      <button class="tab" onclick="showCourses('dsa', this)">DSA</button>
+      <button class="tab" onclick="showCourses('aptitude', this)">Aptitude & Reasoning</button>
+      <button class="tab" onclick="showCourses('ds', this)">Data Science</button>
+      <button class="tab" onclick="showCourses('os', this)">Operating System</button>
+      <button class="tab" onclick="showCourses('cn', this)">Computer Networking</button>
+      <button class="tab" onclick="showCourses('soft', this)">Soft Skills</button>
+    </div>
 
-        <div class="courses-grid">
-          <!-- 8 Course Cards -->
-          <div class="course-card">
-            <div class="image-placeholder"></div>
-            <div class="card-content">
-              <h3 class="course-title">Course Title 1</h3>
-              <p class="course-desc">Short description of course 1.</p>
-              <button class="enroll-btn">Enroll Now</button>
-            </div>
-          </div>
-
-          <div class="course-card">
-            <div class="image-placeholder"></div>
-            <div class="card-content">
-              <h3 class="course-title">Course Title 2</h3>
-              <p class="course-desc">Short description of course 2.</p>
-              <button class="enroll-btn">Enroll Now</button>
-            </div>
-          </div>
-
-          <div class="course-card">
-            <div class="image-placeholder"></div>
-            <div class="card-content">
-              <h3 class="course-title">Course Title 3</h3>
-              <p class="course-desc">Short description of course 3.</p>
-              <button class="enroll-btn">Enroll Now</button>
-            </div>
-          </div>
-
-          <div class="course-card">
-            <div class="image-placeholder"></div>
-            <div class="card-content">
-              <h3 class="course-title">Course Title 4</h3>
-              <p class="course-desc">Short description of course 4.</p>
-              <button class="enroll-btn">Enroll Now</button>
-            </div>
-          </div>
-
-          <div class="course-card">
-            <div class="image-placeholder"></div>
-            <div class="card-content">
-              <h3 class="course-title">Course Title 5</h3>
-              <p class="course-desc">Short description of course 5.</p>
-              <button class="enroll-btn">Enroll Now</button>
-            </div>
-          </div>
-
-          <div class="course-card">
-            <div class="image-placeholder"></div>
-            <div class="card-content">
-              <h3 class="course-title">Course Title 6</h3>
-              <p class="course-desc">Short description of course 6.</p>
-              <button class="enroll-btn">Enroll Now</button>
-            </div>
-          </div>
+    <div class="courses-grid">
+      <!-- All -->
+      <div class="course-card all show">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DSA Course</h3>
+          <p class="course-desc">Master algorithms & data structures.</p>
+          <button class="enroll-btn">Enroll Now</button>
         </div>
       </div>
-    </section>
+      <div class="course-card all show">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Aptitude Course</h3>
+          <p class="course-desc">Sharpen your logical reasoning skills.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card all show">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Data Science Course</h3>
+          <p class="course-desc">Explore data & build predictive models.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card all show">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Operating Systems</h3>
+          <p class="course-desc">Understand OS concepts and design.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card all show">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Networking Basics</h3>
+          <p class="course-desc">Dive into the world of networks.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card all show">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Soft Skills</h3>
+          <p class="course-desc">Improve communication & teamwork.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <!-- DSA -->
+      <div class="course-card dsa">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DSA Course 1</h3>
+          <p class="course-desc">Learn sorting algorithms.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card dsa">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DSA Course 2</h3>
+          <p class="course-desc">Master recursion techniques.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card dsa">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DSA Course 3</h3>
+          <p class="course-desc">Grasp data structures deeply.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card dsa">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DSA Course 4</h3>
+          <p class="course-desc">Learn graph algorithms.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card dsa">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DSA Course 5</h3>
+          <p class="course-desc">Dynamic programming mastery.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <!-- Aptitude -->
+      <div class="course-card aptitude">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Aptitude Course 1</h3>
+          <p class="course-desc">Quantitative aptitude basics.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card aptitude">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Aptitude Course 2</h3>
+          <p class="course-desc">Logical reasoning drills.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card aptitude">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Aptitude Course 3</h3>
+          <p class="course-desc">Problem solving challenges.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card aptitude">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Aptitude Course 4</h3>
+          <p class="course-desc">Math tricks & techniques.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card aptitude">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Aptitude Course 5</h3>
+          <p class="course-desc">Advance logical reasoning.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <!-- Data Science -->
+      <div class="course-card ds">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DS Course 1</h3>
+          <p class="course-desc">Introduction to data science.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card ds">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DS Course 2</h3>
+          <p class="course-desc">Python for data analysis.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card ds">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DS Course 3</h3>
+          <p class="course-desc">Data visualization tools.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card ds">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DS Course 4</h3>
+          <p class="course-desc">Machine learning basics.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card ds">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">DS Course 5</h3>
+          <p class="course-desc">Deep learning overview.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <!-- Operating System -->
+      <div class="course-card os">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">OS Course 1</h3>
+          <p class="course-desc">Basics of OS and processes.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card os">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">OS Course 2</h3>
+          <p class="course-desc">Memory management concepts.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card os">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">OS Course 3</h3>
+          <p class="course-desc">Process scheduling techniques.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card os">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">OS Course 4</h3>
+          <p class="course-desc">File system & disk structure.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card os">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">OS Course 5</h3>
+          <p class="course-desc">Deadlocks and solutions.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <!-- Networking -->
+      <div class="course-card cn">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">CN Course 1</h3>
+          <p class="course-desc">Introduction to networking.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card cn">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">CN Course 2</h3>
+          <p class="course-desc">OSI model explained.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card cn">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">CN Course 3</h3>
+          <p class="course-desc">IP addressing fundamentals.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card cn">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">CN Course 4</h3>
+          <p class="course-desc">TCP/IP stack overview.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card cn">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">CN Course 5</h3>
+          <p class="course-desc">Networking tools & utilities.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="course-card soft">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Soft Skills 1</h3>
+          <p class="course-desc">Effective communication skills.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card soft">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Soft Skills 2</h3>
+          <p class="course-desc">Public speaking confidence.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card soft">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Soft Skills 3</h3>
+          <p class="course-desc">Resume writing & etiquette.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card soft">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Soft Skills 4</h3>
+          <p class="course-desc">Teamwork & collaboration.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+      <div class="course-card soft">
+        <div class="image-placeholder"></div>
+        <div class="card-content">
+          <h3 class="course-title">Soft Skills 5</h3>
+          <p class="course-desc">Handling interviews & stress.</p>
+          <button class="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- notes -->
     <!-- Notes and DSA Sheets Section -->
     <section class="notes-dsa-section">
-      <div class="container">
-        <h2 class="section-title">Notes & DSA Sheets</h2>
+  <div class="container">
+    <h2 class="section-title">Notes & DSA Sheets</h2>
 
-        <div class="tabs">
-          <button class="tab active">DSA Sheets</button>
-          <button class="tab">DSA Notes</button>
-          <button class="tab">ML Notes</button>
-          <button class="tab">OS Notes</button>
-          <button class="tab">Networking Notes</button>
-          <button class="tab">Aptitude & Reasoning</button>
-          <button class="tab">Other</button>
+    <div class="tabs">
+      <button class="tab active" onclick="showNotes('dsa-sheets', this)">DSA Sheets</button>
+      <button class="tab" onclick="showNotes('dsa-notes', this)">DSA Notes</button>
+      <button class="tab" onclick="showNotes('ml-notes', this)">ML Notes</button>
+      <button class="tab" onclick="showNotes('os-notes', this)">OS Notes</button>
+      <button class="tab" onclick="showNotes('network-notes', this)">Networking Notes</button>
+      <button class="tab" onclick="showNotes('aptitude', this)">Aptitude & Reasoning</button>
+      <button class="tab" onclick="showNotes('other', this)">Other</button>
+    </div>
+
+    <div class="notes-grid">
+      <!-- DSA Sheets -->
+      <div class="note-card dsa-sheets show">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
         </div>
-
-        <div class="notes-grid">
-          <!-- DSA Sheets with Notes.png -->
-          <div class="note-card">
-            <div class="square-box">
-              <img src="/images/Note.png" alt="Notes" class="note-image" />
-            </div>
-            <p class="note-title">DSA Sheet 1</p>
-          </div>
-
-          <div class="note-card">
-            <div class="square-box">
-              <img src="/images/Note.png" alt="Notes" class="note-image" />
-            </div>
-            <p class="note-title">DSA Sheet 2</p>
-          </div>
-
-          <div class="note-card">
-            <div class="square-box">
-              <img src="/images/Note.png" alt="Notes" class="note-image" />
-            </div>
-            <p class="note-title">DSA Sheet 3</p>
-          </div>
-
-          <div class="note-card">
-            <div class="square-box">
-              <img src="/images/Note.png" alt="Notes" class="note-image" />
-            </div>
-            <p class="note-title">DSA Sheet 4</p>
-          </div>
-        </div>
+        <p class="note-title">DSA Sheet 1</p>
       </div>
-    </section>
+      <div class="note-card dsa-sheets show">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Sheet 2</p>
+      </div>
+      <div class="note-card dsa-sheets show">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Sheet 3</p>
+      </div>
+      <div class="note-card dsa-sheets show">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Sheet 4</p>
+      </div>
+      <div class="note-card dsa-sheets show">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Sheet 5</p>
+      </div>
+
+      <!-- DSA Notes -->
+      <div class="note-card dsa-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Note 1</p>
+      </div>
+      <div class="note-card dsa-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Note 2</p>
+      </div>
+      <div class="note-card dsa-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Note 3</p>
+      </div>
+      <div class="note-card dsa-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Note 4</p>
+      </div>
+      <div class="note-card dsa-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">DSA Note 5</p>
+      </div>
+
+      <!-- ML Notes -->
+      <div class="note-card ml-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">ML Note 1</p>
+      </div>
+      <div class="note-card ml-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">ML Note 2</p>
+      </div>
+      <div class="note-card ml-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">ML Note 3</p>
+      </div>
+      <div class="note-card ml-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">ML Note 4</p>
+      </div>
+      <div class="note-card ml-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">ML Note 5</p>
+      </div>
+
+      <!-- OS Notes -->
+      <div class="note-card os-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">OS Note 1</p>
+      </div>
+      <div class="note-card os-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">OS Note 2</p>
+      </div>
+      <div class="note-card os-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">OS Note 3</p>
+      </div>
+      <div class="note-card os-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">OS Note 4</p>
+      </div>
+      <div class="note-card os-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">OS Note 5</p>
+      </div>
+
+      <!-- Networking Notes -->
+      <div class="note-card network-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Networking Note 1</p>
+      </div>
+      <div class="note-card network-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Networking Note 2</p>
+      </div>
+      <div class="note-card network-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Networking Note 3</p>
+      </div>
+      <div class="note-card network-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Networking Note 4</p>
+      </div>
+      <div class="note-card network-notes">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Networking Note 5</p>
+      </div>
+
+      <!-- Aptitude & Reasoning -->
+      <div class="note-card aptitude">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Aptitude Note 1</p>
+      </div>
+      <div class="note-card aptitude">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Aptitude Note 2</p>
+      </div>
+      <div class="note-card aptitude">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Aptitude Note 3</p>
+      </div>
+      <div class="note-card aptitude">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Aptitude Note 4</p>
+      </div>
+      <div class="note-card aptitude">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Aptitude Note 5</p>
+      </div>
+
+      <!-- Other -->
+      <div class="note-card other">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Other Note 1</p>
+      </div>
+      <div class="note-card other">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Other Note 2</p>
+      </div>
+      <div class="note-card other">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Other Note 3</p>
+      </div>
+      <div class="note-card other">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Other Note 4</p>
+      </div>
+      <div class="note-card other">
+        <div class="square-box">
+          <img src="/images/Note.png" alt="Notes" class="note-image" />
+        </div>
+        <p class="note-title">Other Note 5</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- certifications -->
     <section class="certifications-section">
@@ -251,41 +696,38 @@
       </div>
     </section>
 
-<!-- coding -->
-<section class="practice-platforms">
+    <!-- coding -->
+    <section class="practice-platforms">
   <div class="platform-section">
     <h2 class="section-title">Other Platforms to Practice Programming</h2>
-
-    <!-- ✅ Flexbox scroll wrapper -->
-    <div class="platforms-scroll">
-      <div class="platform-card">
+    <div class="platform-cards">
+      <a href="https://leetcode.com/" target="_blank" class="platform-card">
         <img src="/images/logo/logo1.png" alt="Logo 1" />
-      </div>
-      <div class="platform-card">
+      </a>
+      <a href="https://www.geeksforgeeks.org/" target="_blank" class="platform-card">
         <img src="/images/logo/logo2.png" alt="Logo 2" />
-      </div>
-      <div class="platform-card">
+      </a>
+      <a href="https://example3.com" target="_blank" class="platform-card">
         <img src="/images/logo/logo3.png" alt="Logo 3" />
-      </div>
-      <div class="platform-card">
+      </a>
+      <a href="https://example4.com" target="_blank" class="platform-card">
         <img src="/images/logo/logo4.png" alt="Logo 4" />
-      </div>
-      <div class="platform-card">
+      </a>
+      <a href="https://example5.com" target="_blank" class="platform-card">
         <img src="/images/logo/logo5.png" alt="Logo 5" />
-      </div>
-      <div class="platform-card">
+      </a>
+      <a href="https://example6.com" target="_blank" class="platform-card">
         <img src="/images/logo/logo6.png" alt="Logo 6" />
-      </div>
-      <div class="platform-card">
+      </a>
+      <a href="https://example7.com" target="_blank" class="platform-card">
         <img src="/images/logo/logo7.png" alt="Logo 7" />
-      </div>
-      <div class="platform-card">
+      </a>
+      <a href="https://example8.com" target="_blank" class="platform-card">
         <img src="/images/logo/logo8.png" alt="Logo 8" />
-      </div>
+      </a>
     </div>
   </div>
 </section>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -449,7 +891,14 @@
         </div>
       </div>
     </footer>
+  
 
-    <!-- <script src="script.js"></script> -->
+    <script src="/js/training.js"></script>
+   
+   
+
+
+
+
   </body>
 </html>

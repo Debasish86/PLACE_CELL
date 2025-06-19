@@ -15,7 +15,6 @@
     />
   </head>
   <body>
-    <!-- Header -->
     <header class="header">
       <div class="container">
         <div class="nav-wrapper">
@@ -24,60 +23,45 @@
               <h1><span class="logo-accent">Place</span>Cell</h1>
             </a>
           </div>
-
+    
           <nav class="nav-desktop">
-            <!-- <a href="/" class="nav-link">Home</a> -->
+            <a href="/" class="nav-link">Home</a>
             <a href="/training" class="nav-link">Training</a>
-            
             <a href="/placement" class="nav-link">Placement</a>
             <a href="/statistics" class="nav-link">Statistics</a>
             <a href="/hirewithus" class="nav-link">Hire with Us</a>
           </nav>
-
-          <a href="/login/student">
-            <button class="login-btn">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              Login
-            </button>
-          </a>
-
+    
+          <% if (student) { %>
+            <span class="user-greet">👋 <%= student.name %></span>
+            <a href="/logout">
+              <button class="login-btn">Logout</button>
+            </a>
+          <% } else { %>
+            <a href="/login/student">
+              <button class="login-btn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Login
+              </button>
+            </a>
+          <% } %>
+    
           <button class="mobile-menu-btn" id="mobileMenuBtn">
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
-        <nav class="nav-mobile" id="mobileNav">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/training" class="nav-link">Training</a>
-          <a href="/placement" class="nav-link">Placement</a>
-          <a href="/statistics" class="nav-link">Statistics</a>
-          <a href="/hirewithus" class="nav-link">Hire with Us</a>
-          <button class="login-btn mobile">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-            Login
-          </button>
-        </nav>
       </div>
     </header>
 

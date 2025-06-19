@@ -19,7 +19,7 @@ exports.signupStudent = async (req, res) => {
     const newStudent = new Student({
       name,
       email,
-      password, // Note: Consider hashing later
+      password,
       phone,
       regd_no,
       semester,
@@ -27,14 +27,10 @@ exports.signupStudent = async (req, res) => {
     });
 
     await newStudent.save();
-
-    // ✅ Set session after signup
-    req.session.studentId = newStudent._id;
-
-    req.flash('success', 'Signup successful!');
+    req.flash('success', 'Signup successful! Please login.');
     res.redirect('/dashboard');
   } catch (error) {
-    console.error("❌ Signup Error:", error.message);
+    console.error(error);
     req.flash('error', 'Signup failed');
     res.redirect('/signup/student');
   }
@@ -55,19 +51,23 @@ exports.loginStudent = async (req, res) => {
     }
 
     req.session.studentId = student._id;
+    req.session.student = student; // ✅ This is what EJS expects for <%= student.name %>
 
     req.flash('success', `Welcome, ${student.name}!`);
-    res.redirect('/dashboard');
+    res.redirect('/'); // ✅ Redirect to home page
   } catch (error) {
-    console.error("❌ Login Error:", error.message);
+    console.error(error);
     req.flash('error', 'Login failed');
     res.redirect('/login/student');
   }
 };
 
+
 exports.logoutStudent = (req, res) => {
   req.session.destroy(err => {
-    if (err) console.error("❌ Logout Error:", err.message);
-    res.redirect('/');
+    if (err) {
+      console.error("❌ Logout Error:", err.message);
+    }
+    res.redirect('/'); // ✅ Redirects to homepage
   });
 };

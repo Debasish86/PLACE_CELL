@@ -1,124 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PlaceCell</title>
-  <link rel="stylesheet" href="/css/signupcollege.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-    <header class="site-header">
-  <a href="index.html">
-    <img src="images/logo.png" alt="PlaceCell Logo" class="site-logo" />
-  </a>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlaceCell</title>
+    <link rel="stylesheet" href="/css/signupcollege.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="/" style="text-decoration: none; color: inherit">
+              <h1><span class="logo-accent">Place</span>Cell</h1>
+            </a>
+          </div>
 
+          <nav class="nav-desktop">
+            <a href="/training" class="nav-link">Training</a>
+            <a href="/placement" class="nav-link">Placement</a>
+            <a href="/statistics" class="nav-link">Statistics</a>
+            <a href="/hirewithus" class="nav-link">Hire with Us</a>
+          </nav>
 
-  
+          <a href="/login/student">
+            <button class="login-btn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Login
+            </button>
+          </a>
 
-  <!-- Register Form -->
- <!-- Replace old register form with this inside <body> -->
-
-<!-- Register Form (Updated Design) -->
-<div class="register-container">
-  <div class="logo">Place<span>Cell</span></div>
-  <div class="form-container">
-    <div class="form-card">
-      <div class="form-header">
-        <h2>Register</h2>
-        <a href="#">LOGIN</a>
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <nav class="nav-mobile" id="mobileNav">
+          <a href="/training" class="nav-link">Training</a>
+          <a href="/placement" class="nav-link">Placement</a>
+          <a href="/statistics" class="nav-link">Statistics</a>
+          <a href="/hirewithus" class="nav-link">Hire with Us</a>
+          <button class="login-btn mobile">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Login
+          </button>
+        </nav>
       </div>
-      <p>Welcome to PlaceCell</p>
-      <form id="registerForm">
-        <label>Name*</label>
-        <input type="text" placeholder="Enter your Name Of The College" required />
-        <label>Email*</label>
-        <input type="email" placeholder="Enter your Email" required />
-        <label>Password*</label>
-        <input type="password" placeholder="Enter your Password" required />
-        <label>Repeat Password*</label>
-        <input type="password" placeholder="Enter your Password again" required />
-        <button type="submit">Create Account</button>
-      </form>
+    </header>
+    <br /><br />
+
+    <!-- Register Form -->
+    <!-- Replace old register form with this inside <body> -->
+
+    <!-- Register Form (Updated Design) -->
+    <div class="register-container">
+      <div class="logo">Place<span>Cell</span></div>
+      <div class="form-container">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>Register</h2>
+            <a href="#">LOGIN</a>
+          </div>
+          <p>Welcome to PlaceCell</p>
+          <form id="registerForm">
+            <label>Name*</label>
+            <input
+              type="text"
+              placeholder="Enter your Name Of The College"
+              required
+            />
+            <label>Email*</label>
+            <input type="email" placeholder="Enter your Email" required />
+            <label>Password*</label>
+            <input type="password" placeholder="Enter your Password" required />
+            <label>Repeat Password*</label>
+            <input
+              type="password"
+              placeholder="Enter your Password again"
+              required
+            />
+            <button type="submit">Create Account</button>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="footer-logo">
+              Place<span class="logo-accent">Cell</span>
+            </h3>
+            <p class="footer-description">
+              Where preparation meets opportunity - driving student success with
+              real-world connections.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
 
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Programs</a></li>
+              <li><a href="#">Success Stories</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
 
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Career Training</a></li>
+              <li><a href="#">Job Placement</a></li>
+              <li><a href="#">Interview Prep</a></li>
+              <li><a href="#">Resume Building</a></li>
+              <li><a href="#">Corporate Hiring</a></li>
+            </ul>
+          </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Section heading</h1>
-    <div class="hero-buttons">
-      <button class="primary-btn">Button</button>
-      <button class="secondary-btn">Secondary button</button>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3 class="footer-logo">Place<span class="logo-accent">Cell</span></h3>
-          <p class="footer-description">
-            Where preparation meets opportunity - driving student success with real-world connections.
-          </p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+          <div class="footer-section">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-envelope"></i> info@placecell.com</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Career Street<br />Silicon
+                Valley, CA 94043
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Programs</a></li>
-            <li><a href="#">Success Stories</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+        <hr />
 
-        <div class="footer-section">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#">Career Training</a></li>
-            <li><a href="#">Job Placement</a></li>
-            <li><a href="#">Interview Prep</a></li>
-            <li><a href="#">Resume Building</a></li>
-            <li><a href="#">Corporate Hiring</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Contact Us</h4>
-          <ul>
-            <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
-            <li><i class="fas fa-envelope"></i> info@placecell.com</li>
-            <li><i class="fas fa-map-marker-alt"></i> 123 Career Street<br>Silicon Valley, CA 94043</li>
-          </ul>
+        <div class="footer-bottom">
+          <p>© 2024 PlaceCell. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
         </div>
       </div>
+    </footer>
 
-      <hr />
-
-      <div class="footer-bottom">
-        <p>© 2024 PlaceCell. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

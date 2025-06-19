@@ -8,13 +8,57 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header class="site-header">
-  <a href="index.html">
-    <img src="images/logo.png" alt="PlaceCell Logo" class="site-logo" />
-  </a>
-</header>
-
-
+        <!-- Header -->
+        <header class="header">
+          <div class="container">
+              <div class="nav-wrapper">
+                  <div class="logo">
+                      <a href="/" style="text-decoration: none; color: inherit;">
+                          <h1><span class="logo-accent">Place</span>Cell</h1>
+                      </a>
+                  </div>
+                  
+                  
+                  <nav class="nav-desktop">
+                      <a href="/training" class="nav-link">Training</a>
+                      <a href="/placement" class="nav-link">Placement</a>
+                      <a href="/statistics" class="nav-link">Statistics</a>
+                      <a href="/hirewithus" class="nav-link">Hire with Us</a>
+                  </nav>
+                  
+                  <a href="/login/student">
+                      <button class="login-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Login
+                      </button>
+                    </a>
+                    
+                  
+                  <button class="mobile-menu-btn" id="mobileMenuBtn">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </button>
+              </div>
+              <nav class="nav-mobile" id="mobileNav">
+                  <a href="/training" class="nav-link">Training</a>
+                  <a href="/placement" class="nav-link">Placement</a>
+                  <a href="/statistics" class="nav-link">Statistics</a>
+                  <a href="/hirewithus" class="nav-link">Hire with Us</a>
+                  <button class="login-btn mobile">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                      Login
+                  </button>
+              </nav>
+          </div>
+      </header>
+<br><br>
   
 
   <!-- Register Form -->
@@ -36,10 +80,11 @@
         <label>Password*</label>
         <input type="password" placeholder="Enter your Password" required />
          <a href="#" class="forgot-password">Forgot Password?</a>
-        <div class="login-section">
+         <div class="login-section">
           <button class="login-btn">LOGIN</button>
-          <p>New to PlaceCell? <a href="#">Register Here</a></p>
+          <p>New to PlaceCell? <a href="/signup/college" class="register-link">Register Here</a></p>
         </div>
+        
       </form>
     </div>
       </form>
@@ -50,14 +95,7 @@
 
 
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Section heading</h1>
-    <div class="hero-buttons">
-      <button class="primary-btn">Button</button>
-      <button class="secondary-btn">Secondary button</button>
-    </div>
-  </section>
+
 
   <!-- Footer -->
   <footer class="footer">

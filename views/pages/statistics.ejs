@@ -9,54 +9,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <h1><span class="logo-accent">Place</span>Cell</h1>
-                </div>
-                
-                <nav class="nav-desktop">
-                    <a href="/training" class="nav-link">Training</a>
-                    <a href="/placement" class="nav-link">Placement</a>
-                    <a href="/statistics" class="nav-link">Statistics</a>
-                    <a href="/hirewithus" class="nav-link">Hire with Us</a>
-                </nav>
-                
-                <button class="login-btn">
+      <div class="container">
+          <div class="nav-wrapper">
+              <div class="logo">
+                  <a href="/" style="text-decoration: none; color: inherit;">
+                      <h1><span class="logo-accent">Place</span>Cell</h1>
+                  </a>
+              </div>
+              
+              
+              <nav class="nav-desktop">
+                  <a href="/training" class="nav-link">Training</a>
+                  <a href="/placement" class="nav-link">Placement</a>
+                  <a href="/statistics" class="nav-link">Statistics</a>
+                  <a href="/hirewithus" class="nav-link">Hire with Us</a>
+              </nav>
+              
+              <a href="/login/student">
+                  <button class="login-btn">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
                     </svg>
                     Login
-                </button>
+                  </button>
+                </a>
                 
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            
-            <nav class="nav-mobile" id="mobileNav">
-                <a href="/training" class="nav-link">Training</a>
-                <a href="/placement" class="nav-link">Placement</a>
-                <a href="/statistics" class="nav-link">Statistics</a>
-                <a href="/hirewithus" class="nav-link">Hire with Us</a>
-                <button class="login-btn mobile">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    Login
-                </button>
-            </nav>
-        </div>
-    </header>
+              
+              <button class="mobile-menu-btn" id="mobileMenuBtn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
+          </div>
+          <nav class="nav-mobile" id="mobileNav">
+              <a href="/training" class="nav-link">Training</a>
+              <a href="/placement" class="nav-link">Placement</a>
+              <a href="/statistics" class="nav-link">Statistics</a>
+              <a href="/hirewithus" class="nav-link">Hire with Us</a>
+              <button class="login-btn mobile">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  Login
+              </button>
+          </nav>
+      </div>
+  </header>
 
    <!-- placement header// -->
    <!-- Placement Stats Section -->
@@ -75,69 +81,58 @@
   </section>
 
 
-  <section class="stats-section" id="statistics">
-    <div class="stats-row">
-      <!-- Placement Overview -->
-      <div class="stat-box">
-        <h3 class="stat-title">Placement Overview</h3>
-        <p class="stat-text">Total Eligible Students: <span id="eligible-count">0</span></p>
-        <p class="stat-text">Total Placed Students: <span id="placed-count">0</span></p>
-      </div>
-  
-      <!-- Company Visits -->
-      <div class="stat-box">
-        <h3 class="stat-title">Company Visits</h3>
-        <p class="stat-text">Total Companies Visited: <span id="visited-count">0</span></p>
-        <p class="stat-text">Product Based: <span id="product-count">0</span></p>
-        <p class="stat-text">Service Based: <span id="service-count">0</span></p>
-      </div>
-  
-      <!-- Package Details -->
-      <div class="stat-box">
-        <h3 class="stat-title">Package Details</h3>
-        <div class="bar-container">
-          <label>Highest Package</label>
-          <div class="bar"><div id="highest-bar" class="fill-bar"></div></div>
-          <label>Median Package</label>
-          <div class="bar"><div id="median-bar" class="fill-bar"></div></div>
-          <label>Average Package</label>
-          <div class="bar"><div id="average-bar" class="fill-bar"></div></div>
-        </div>
-      </div>
+<!-- Chart.js CDN -->
+
+
+<!-- Statistics Section -->
+<section class="stats-section" id="statistics">
+  <div class="stats-row">
+    <div class="stat-box">
+      <h3>Placement Overview</h3>
+      <canvas id="placementChart"></canvas>
     </div>
-  
-    <div class="stats-row">
-      <div class="stat-box">
-        <h3 class="stat-title">Interesting Highlight</h3>
-        <p class="stat-text">Offers from <span id="offer-count">0</span> companies</p>
-        <p class="stat-text">Conversion Rate: <span id="conversion-rate">0%</span></p>
-        <p class="stat-text">Fastest Offer: <span id="fastest-offer">0 hours</span></p>
-      </div>
-  
-      <div class="stat-box">
-        <h3 class="stat-title">Coming Soon</h3>
-        <p class="stat-text">More visual data in next update!</p>
-      </div>
-  
-      <div class="stat-box">
-        <h3 class="stat-title">Coming Soon</h3>
-        <p class="stat-text">Custom charts will be added here.</p>
-      </div>
+    <div class="stat-box">
+      <h3>Company Visits</h3>
+      <canvas id="companyChart"></canvas>
     </div>
-  </section>
+  </div>
+  <div class="stats-row">
+    <div class="stat-box">
+      <h3>Package Details</h3>
+      <canvas id="packageChart"></canvas>
+    </div>
+    <div class="stat-box">
+      <h3>Interesting Highlight</h3>
+      <canvas id="highlightChart"></canvas>
+    </div>
+  </div>
+</section>
+
   
   <!-- Link your JavaScript -->
-  <script src="/js/stats.js" defer></script>
+  <!-- <script src="/js/stats.js" defer></script> -->
   
   
-  <!-- placement records -->
-  <section class="placement-section">
-    <h2 class="placement-title">Placement Records</h2>
-    <div class="record-box"></div>
-    <div class="record-box"></div>
-    <div class="record-box"></div>
-    <div class="record-box"></div>
-  </section>
+<!-- Placement Records -->
+<section class="placement-section">
+  <h2 class="placement-title">Placement Records</h2>
+  <div class="record-container">
+    <div class="record-box">
+      <p><strong>2024:</strong> 320 eligible | 285 placed | Highest: ₹45 LPA | Avg: ₹10.2 LPA</p>
+    </div>
+    <div class="record-box">
+      <p><strong>2023:</strong> 310 eligible | 270 placed | Highest: ₹40 LPA | Avg: ₹9.4 LPA</p>
+    </div>
+    <div class="record-box">
+      <p><strong>2022:</strong> 295 eligible | 250 placed | Highest: ₹36 LPA | Avg: ₹8.8 LPA</p>
+    </div>
+    <div class="record-box">
+      <p><strong>2021:</strong> 280 eligible | 240 placed | Highest: ₹30 LPA | Avg: ₹7.5 LPA</p>
+    </div>
+  </div>
+</section>
+
+
   
 
   <section class="success-section">
@@ -176,7 +171,7 @@
       </div>
   
       <div class="card">
-        <img src="user.png" alt="Avatar" class="avatar" />
+        <img src="/images/user.png" alt="Avatar" class="avatar" />
         <h3>Joeylene Rivera</h3>
         <p class="role">Web Developer</p>
         <p class="desc">A kiddo who uses Bootstrap and Laravel in web development. Currently playing around with design via Figma</p>
@@ -297,6 +292,8 @@
     </footer>
 
     <!-- <script src="script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script src="/js/statistics.js" defer></script>
 </body>
 </html>

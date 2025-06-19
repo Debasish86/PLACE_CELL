@@ -1,282 +1,433 @@
 /* Global */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #000;
-    color: #fff;
-  }
-  
-  /* Hero */
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 60px 80px;
-    background: #f7f7f7;
-    color: #000;
-  }
-  
-  .hero h1 {
-    font-size: 30px;
-    font-weight: bold;
-  }
-  
-  .hero-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .primary-btn {
-    padding: 10px 20px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .secondary-btn {
-    padding: 10px 20px;
-    background: #e5e5e5;
-    color: #333;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  /* Register Form */
-  /* New Register Form Styles */
-  .register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: #0d0d0d;
-  }
-  
-  .logo {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: white;
-  }
-  
-  .logo span {
-    color: #3b82f6;
-  }
-  
-  .form-container {
-    width: 100%;
-    max-width: 450px;
-  }
-  
-  .form-card {
-    background: #1c1c1c;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.1);
-    font-weight: bold;
-  }
-  
-  .form-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .form-header h2 {
-    color: #fff;
-    margin: 0;
-  }
-  
-  .form-header a {
-    text-decoration: none;
-    color: #3b82f6;
-    font-weight: bold;
-  }
-  
-  .form-card p {
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #ccc;
-  }
-  
-  .form-card label {
-    display: block;
-    margin-top: 14px;
-    font-size: 15px;
-    color: #ccc;
-    font-weight: bold; 
-  }
-  
-  .form-card input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: none;
-    border-radius: 6px;
-    background: #2a2a2a;
-    color: #fff;
-  }
-  .forgot-password {
-    display: block;
-    margin-top: 8px;
-    margin-bottom: 14px;
-    text-decoration: none;
-    color: #3b82f6;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: right;
-    padding-right: 2px; /* Fine-tune right alignment */
-    transition: color 0.3s ease;
-  }
-  
-  .form-card button {
-    width: 100%;
-    margin-top: 24px;
-    padding: 12px;
-    background: #3b82f6;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .form-card button:hover {
-    background: #2563eb;
-  }
-  .login-section {
-    text-align: center;
-    margin: 20px 0; /* Adds spacing above and below to fit naturally in the form */
-  }
-  /* Footer */
-  .footer {
-       width: 100vw;
-    background-color: #020617;
-    padding: 40px 0 20px;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-  }
-  
-  .footer-section {
-    flex: 1 1 200px;
-  }
-  
-  .footer-logo {
-    font-size: 22px;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .logo-accent {
-    color: #3b82f6;
-  }
-  
-  .footer-description {
-     font-size: 15px;               /* slightly larger text */
-    line-height: 1.8;              /* more vertical spacing between lines */
-    color: #ccc;
-    font-weight: 400;              /* regular weight for elegance */
-    max-width: 300px;              /* optional: keeps it from stretching too wide */
-    word-spacing: 0.5px;    
-  }
-  
-  .social-links a {
-    color: #ccc;
-    margin-right: 12px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  
-  .footer-section h4 {
-    color: white;
-    margin-bottom: 16px;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 14px;    /* spacing between items */
-    font-size: 16px;        /* make it bigger */
-    color: #ccc;
-    font-weight: 500;       /* optional: makes it a little bolder */
-    letter-spacing: 0.3px;
-  }
-  
-  .footer-section ul li a {
-    text-decoration: none;
-    color: #ccc;
-    transition: color 0.3s;
-  }
-  
-  .footer-section ul li a:hover {
-    color: #3b82f6;
-  }
-  
-  .footer-section ul li i {
-    margin-right: 8px;
-    color: #3b82f6;
-  }
-  
-  hr {
-    margin: 30px 0;
-    border: 0;
-    border-top: 1px solid #2c2f3a;
-  }
-  
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between; /* separates copyright & links */
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 15px;
-    font-size: 13px;
-    color: #999;
-  }
-  
-  .footer-links {
-    margin-top: 10px;
-  }
-  
-  .footer-links a {
-    color: #999;
-    margin: 0 12px;
-    text-decoration: none;
-    font-size: 13px;
-  }
-  
-  .footer-links a:hover {
-    color: #3b82f6;
-  }
-  
-  .site-header a {
-    text-decoration: none;
-  }
-  
-  .site-logo {
-    height: 40px;
-    object-fit: contain;
-    cursor: pointer; /* show hand cursor */
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  background: #000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #454545;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.logo-accent {
+  color: #454545;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #454545;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.login-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #454545;
+  color: #fff;
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+  width: 1.5rem;
+  height: 2px;
+  background: #ccc;
+  margin: 2px 0;
+  transition: 0.3s;
+}
+
+.nav-mobile {
+  display: none;
+  background: #1e1e1e;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-mobile.active {
+  display: flex;
+}
+
+.nav-mobile .nav-link {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.nav-mobile .nav-link:hover {
+  background: #454545;
+}
+
+.nav-mobile .login-btn {
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hire-hero {
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hire-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.main-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtext {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.signup-btn {
+  margin-top: 1rem;
+  background-color: #454545;
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #1e1e1e;
+}
+
+/* Register Form */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #000;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.logo span {
+  color: #454545;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.form-card {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  font-weight: bold;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-header h2 {
+  color: #fff;
+  margin: 0;
+}
+
+.form-header a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.form-card p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.form-card label {
+  display: block;
+  margin-top: 14px;
+  font-size: 15px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.form-card input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 14px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 2px;
+  transition: color 0.3s ease;
+}
+
+.form-card button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px;
+  background: #454545;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-card button:hover {
+  background: #1e1e1e;
+}
+
+.login-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Footer */
+.footer {
+  width: 100vw;
+  background-color: #000;
+  padding: 40px 0 20px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-logo {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.footer-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #ccc;
+  font-weight: 400;
+  max-width: 300px;
+  word-spacing: 0.5px;
+}
+
+.social-links a {
+  color: #ccc;
+  margin-right: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-section h4 {
+  color: white;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #ccc;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer-section ul li i {
+  margin-right: 8px;
+  color: #454545;
+}
+
+hr {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid #454545;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #999;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.site-header a {
+  text-decoration: none;
+}
+
+.site-logo {
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.register-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #ccc;
+}
+
+.register-link:active {
+  color: #454545;
+}
+

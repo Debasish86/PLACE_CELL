@@ -13,10 +13,11 @@ app.use(express.static('public'));
 // Connect to MongoDB
 connectDB();
 app.use(session({
-  secret: 'yourSecretKey',
+  secret: process.env.SESSION_SECRET || 'yourFallbackSecret',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true
 }));
+
 
 app.use(flash());
 
@@ -33,12 +34,6 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// Session middleware
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true
-}));
 
 app.get('/test-student-signup', async (req, res) => {
     const Student = require('./models/Student');
@@ -72,6 +67,8 @@ const trainingRoutes = require('./routes/training');
 const placementRoutes = require('./routes/placement');
 const statisticsRoutes = require('./routes/statistics');
 const blogRoutes = require('./routes/blog');
+const dashboardRoutes = require('./routes/dashboard');
+
 
 app.use("/", indexRoutes);
 app.use("/", studentRoutes);
@@ -81,7 +78,7 @@ app.use("/", trainingRoutes);
 app.use("/", placementRoutes);
 app.use("/", statisticsRoutes);
 app.use("/", blogRoutes);
-
+app.use("/", dashboardRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

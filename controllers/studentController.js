@@ -13,13 +13,13 @@ exports.signupStudent = async (req, res) => {
     const existing = await Student.findOne({ email });
     if (existing) {
       req.flash('error', 'Email already registered');
-      return res.redirect('/signup');
+      return res.redirect('/signup/student');
     }
 
     const newStudent = new Student({
       name,
       email,
-      password,
+      password, // Note: Consider hashing later
       phone,
       regd_no,
       semester,
@@ -27,12 +27,16 @@ exports.signupStudent = async (req, res) => {
     });
 
     await newStudent.save();
-    req.flash('success', 'Signup successful! Please login.');
-    res.redirect('/login');
+
+    // ✅ Set session after signup
+    req.session.studentId = newStudent._id;
+
+    req.flash('success', 'Signup successful!');
+    res.redirect('/dashboard');
   } catch (error) {
-    console.error(error);
+    console.error("❌ Signup Error:", error.message);
     req.flash('error', 'Signup failed');
-    res.redirect('/signup');
+    res.redirect('/signup/student');
   }
 };
 
@@ -47,29 +51,23 @@ exports.loginStudent = async (req, res) => {
 
     if (!student || student.password !== password) {
       req.flash('error', 'Invalid email or password');
-      return res.redirect('/login');
+      return res.redirect('/login/student');
     }
 
-    // Save student info to session
-    req.session.student = {
-      id: student._id,
-      name: student.name,
-      email: student.email
-    };
+    req.session.studentId = student._id;
 
     req.flash('success', `Welcome, ${student.name}!`);
-    res.redirect('/'); // home page
+    res.redirect('/dashboard');
   } catch (error) {
-    console.error(error);
+    console.error("❌ Login Error:", error.message);
     req.flash('error', 'Login failed');
-    res.redirect('/login');
+    res.redirect('/login/student');
   }
 };
 
-// Optional: Logout controller
 exports.logoutStudent = (req, res) => {
-  req.session.destroy((err) => {
-    if (err) console.error(err);
-    res.redirect('/login');
+  req.session.destroy(err => {
+    if (err) console.error("❌ Logout Error:", err.message);
+    res.redirect('/');
   });
 };

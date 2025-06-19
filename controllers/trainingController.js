@@ -17,11 +17,11 @@ exports.getPlacementPage = (req, res) => {
   
   
   exports.getTrainingPage = (req, res) => {
-    if (!req.session.student) {
+    if (!req.session.student){
       req.flash('error_msg', 'Please login to access the training page.');
       return res.redirect('/login/student');
     }
-  
+    
     res.render('pages/training', {
       student: req.session.student
     });

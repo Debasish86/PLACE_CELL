@@ -46,21 +46,25 @@ exports.loginStudent = async (req, res) => {
     const student = await Student.findOne({ email });
 
     if (!student || student.password !== password) {
-      req.flash('error', 'Invalid email or password');
+      req.flash('error_msg', 'Invalid email or password');
       return res.redirect('/login/student');
     }
 
     req.session.studentId = student._id;
-    req.session.student = student; // ✅ This is what EJS expects for <%= student.name %>
+    req.session.student = student;
 
-    req.flash('success', `Welcome, ${student.name}!`);
-    res.redirect('/'); // ✅ Redirect to home page
+    // ✅ Redirect to the original requested page or default to /home
+    const redirectTo = req.session.redirectTo || '/home';
+    delete req.session.redirectTo;
+    res.redirect(redirectTo);
+
   } catch (error) {
     console.error(error);
-    req.flash('error', 'Login failed');
+    req.flash('error_msg', 'Login failed');
     res.redirect('/login/student');
   }
 };
+
 
 
 exports.logoutStudent = (req, res) => {

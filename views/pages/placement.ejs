@@ -70,95 +70,81 @@
       </div>
   </header>
 
-    <section class="dashboard-section">
-        <br><br>
-        <h2 class="dashboard-heading">Stay Tuned Every Second..</h2>
-      
-        <div class="dashboard-grid">
-          <!-- Left side list of dates -->
-          <div class="date-list">
-            <div class="date-card">
-              <div>
-                <h3>14</h3>
-                <p>December 2016<br><span>Monday</span></p>
-              </div>
-              <div class="date-tag">13</div>
-            </div>
-            <div class="date-card">
-              <div>
-                <h3>15</h3>
-                <p>December 2016<br><span>Tuesday</span></p>
-              </div>
-              <div class="date-tag">22</div>
-            </div>
-            <div class="date-card">
-              <div>
-                <h3>16</h3>
-                <p>December 2016<br><span>Wednesday</span></p>
-              </div>
-              <div class="date-tag">18</div>
-            </div>
-            <div class="date-card">
-              <div>
-                <h3>17</h3>
-                <p>December 2016<br><span>Thursday</span></p>
-              </div>
-              <div class="date-tag">10</div>
-            </div>
-            <div class="date-card">
-              <div>
-                <h3>18</h3>
-                <p>December 2016<br><span>Friday</span></p>
-              </div>
-              <div class="date-tag">19</div>
-            </div>
-            <div class="date-card">
-              <div>
-                <h3>19</h3>
-                <p>December 2016<br><span>Saturday</span></p>
-              </div>
-              <div class="date-tag">21</div>
-            </div>
-          </div>
-      
-          <!-- Calendar Full View -->
-          <div class="calendar-box small">
-            <div class="calendar-header">
-              <h3>June 2025</h3>
-            </div>
-            <div id="fullCalendar"></div>
-          </div>
-      
-          <!-- Notification -->
-          <div class="notification-box">
-            <div class="notification-header">
-              <span class="dot"></span>
-              <p>NOTIFICATIONS</p>
-              <span class="now">now</span>
-            </div>
-            <div class="todo-item">Todo List <input type="checkbox"></div>
-            <div class="todo-item">Todo List <input type="checkbox"></div>
-          </div>
-      
-          <!-- Todo list right side -->
-          <div class="todo-panel">
-            <h3 id="todo-date">11 June 2025</h3>
-            <div class="todo-item">Todo List <input type="checkbox"></div>
-            <div class="todo-item">Todo List <input type="checkbox"></div>
-            <div class="todo-item">Todo List <input type="checkbox"></div>
-            <div class="todo-item">Todo List <input type="checkbox"></div>
-            <div class="todo-item">Todo List <input type="checkbox"></div>
-          </div>
+  <section class="dashboard-section">
+    <br><br>
+    <h2 class="dashboard-heading">Stay Tuned Every Second..</h2>
+  
+    <div class="dashboard-grid">
+      <!-- Left side list of recent dates -->
+      <div class="date-list" id="dateList">
+        <!-- JS will populate this -->
+      </div>
+  
+      <!-- Right side calendar -->
+      <div class="calendar-box small">
+        <div class="calendar-header">
+          <button id="prevMonth">&#8592;</button>
+          <h3 id="calendarMonthYear">June 2025</h3>
+          <button id="nextMonth">&#8594;</button>
         </div>
-      </section>
-      </section>
+        <div id="fullCalendar"></div>
+      </div>
+  
+      <!-- The rest of your layout (notifications, todo) stays unchanged -->
+    </div>
+  </section>
+  
+<!-- Todo & Notification Container -->
+<div class="todo-notification-wrapper">
+  <!-- Notification -->
+  <div class="notification-box">
+    <div class="notification-header">
+      <span class="dot"></span>
+      <p>NOTIFICATIONS</p>
+      <span class="now">now</span>
+    </div>
+    <div class="todo-item">Todo List <input type="checkbox" /></div>
+    <div class="todo-item">Todo List <input type="checkbox" /></div>
+  </div>
+
+  <!-- Todo panel -->
+  <div class="todo-panel">
+    <h3 id="todo-date">11 June 2025</h3>
+    <div class="todo-item">Todo List <input type="checkbox" /></div>
+    <div class="todo-item">Todo List <input type="checkbox" /></div>
+    <div class="todo-item">Todo List <input type="checkbox" /></div>
+    <div class="todo-item">Todo List <input type="checkbox" /></div>
+    <div class="todo-item">Todo List <input type="checkbox" /></div>
+  </div>
+</div>
 
 
-      <!-- placements records -->
-      <section class="placement-section">
-        <h2>Placement Records</h2>
-        <div class="placement-box"></div>
-      </section>
+
+  <!-- Placement Records Section -->
+<section class="placement-section">
+  <h2>Placement Records</h2>
+
+  <div class="placement-record">
+    <div class="company-applied">Google</div>
+    <div class="placement-status cracked">Cracked</div>
+  </div>
+
+  <div class="placement-record">
+    <div class="company-applied">Amazon</div>
+    <div class="placement-status not-cracked">Not Cracked</div>
+  </div>
+
+  <div class="placement-record">
+    <div class="company-applied">Microsoft</div>
+    <div class="placement-status cracked">Cracked</div>
+  </div>
+
+  <div class="placement-record">
+    <div class="company-applied">TCS</div>
+    <div class="placement-status not-cracked">Not Cracked</div>
+  </div>
+</section>
+
 
 
 
@@ -347,6 +333,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-    <!-- <script src="script.js"></script> -->
+    <script src="/js/calender.js"></script>
+    <!-- <script src="/js/recentDates.js"></script> -->
+
   </body>
 </html>

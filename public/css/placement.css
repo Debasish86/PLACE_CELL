@@ -220,6 +220,7 @@ body {
       "notifications todo";
   }
   
+  
   .date-list {
     grid-area: dates;
     display: flex;
@@ -275,6 +276,36 @@ body {
     overflow: hidden;
     font-size: 0.6rem;
   }
+  .todo-notification-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Optional: make responsive on smaller screens */
+    background-color: black;
+  }
+  
+  .notification-box,
+  .todo-panel {
+    flex: 1;
+    min-width: 280px;
+    background-color: #f8f8f8;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .notification-header,
+  .todo-panel h3 {
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .todo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
   
   .notification-box {
     grid-area: notifications;
@@ -322,25 +353,59 @@ body {
 
 
 
-  /* placement records */
-  section.placement-section {
+ /* placement records */
+section.placement-section {
     padding: 40px 100px;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
   }
-
+  
   .placement-section h2 {
     color: #fff;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
   }
-
-  .placement-box {
-    width: 700px;
-    height: 180px;
+  
+  /* Compact individual record boxes */
+  .placement-record {
     background-color: #1e1e1e;
-    border-radius: 10px;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #fff;
+    max-width: 500px;
   }
+  
+  /* Company Name Styling */
+  .company-applied {
+    font-weight: 500;
+  }
+  
+  /* Status Styling */
+  .placement-status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  /* Cracked */
+  .placement-status.cracked {
+    background-color: #22c55e; /* green */
+    color: #000;
+  }
+  
+  /* Not Cracked */
+  .placement-status.not-cracked {
+    background-color: #ef4444; /* red */
+    color: #fff;
+  }
+  
 
 
 /* comapines */

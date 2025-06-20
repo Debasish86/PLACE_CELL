@@ -37,17 +37,19 @@
         <a href="/signup/college">REGISTER</a>
       </div>
       <p>Welcome to PlaceCell</p>
-      <form id="registerForm">
+      <form id="registerForm" action="/login/college" method="POST">
         <label>Email*</label>
-        <input type="email" placeholder="Enter your Email" required />
+        <input type="email" name="email" placeholder="Enter your Email" required />
+      
         <label>Password*</label>
-        <input type="password" placeholder="Enter your Password" required />
-         <a href="#" class="forgot-password">Forgot Password?</a>
-         <div class="login-section">
-          <button class="login-btn">LOGIN</button>
+        <input type="password" name="password" placeholder="Enter your Password" required />
+      
+        <a href="#" class="forgot-password">Forgot Password?</a>
+      
+        <div class="login-section">
+          <button class="login-btn" type="submit">LOGIN</button>
           <p>New to PlaceCell? <a href="/signup/college" class="register-link">Register Here</a></p>
         </div>
-        
       </form>
     </div>
       </form>

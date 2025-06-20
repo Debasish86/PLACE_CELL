@@ -14,5 +14,8 @@ router.get('/login/company', companyController.getLoginPage);
 
 // POST login form
 router.post('/login/company', companyController.loginCompany);
+router.get('/company', (req, res) => {
+    res.render('pages/dashboardCompany', { company: req.session.company });
+  });
 
 module.exports = router;

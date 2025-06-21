@@ -15,32 +15,53 @@
     />
   </head>
   <body>
-   <!-- Header -->
-<header class="header">
-  <div class="container">
-    <div class="nav-wrapper">
-      <div class="logo">
-        <a href="/" style="text-decoration: none; color: inherit">
-          <h1><span class="logo-accent">Place</span>Cell</h1>
-        </a>
-      </div>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="/" style="text-decoration: none; color: inherit">
+              <h1><span class="logo-accent">Place</span>Cell</h1>
+            </a>
+          </div>
 
-      <nav class="nav-desktop">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/training" class="nav-link">Training</a>
-        <a href="/placement" class="nav-link">Placement</a>
-        <a href="/statistics" class="nav-link">Statistics</a>
-        <a href="/hirewithus" class="nav-link">Hire with Us</a>
-      </nav>
+          <nav class="nav-desktop">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/training" class="nav-link">Training</a>
+            <a href="/placement" class="nav-link">Placement</a>
+            <a href="/statistics" class="nav-link">Statistics</a>
+            <a href="/hirewithus" class="nav-link">Hire with Us</a>
+          </nav>
 
-      <% if (student) { %>
-        <span class="user-greet">👋 <%= student.name %></span>
-        <a href="/logout">
-          <button class="login-btn">Logout</button>
-        </a>
-      <% } else { %>
-        <a href="/login/student">
-          <button class="login-btn">
+          <a href="/login/student">
+            <button class="login-btn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Login
+            </button>
+          </a>
+
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <nav class="nav-mobile" id="mobileNav">
+          <a href="/training" class="nav-link">Training</a>
+          <a href="/placement" class="nav-link">Placement</a>
+          <a href="/statistics" class="nav-link">Statistics</a>
+          <a href="/hirewithus" class="nav-link">Hire with Us</a>
+          <button class="login-btn mobile">
             <svg
               width="16"
               height="16"
@@ -54,18 +75,9 @@
             </svg>
             Login
           </button>
-        </a>
-      <% } %>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
+        </nav>
+      </div>
+    </header>
 
     <!-- certifications
  -->
@@ -78,7 +90,7 @@
           <button class="register-btn">Register Now</button>
         </div>
         <div class="placement-box">
-  <img src="images\cgu.jpg" alt="3D Illustration" class="placement-img" />
+  <img src="images\TLogo.jpg" alt="3D Illustration" class="placement-img" />
 </div>
     </section>
 
@@ -100,313 +112,346 @@
     <div class="courses-grid">
       <!-- All -->
       <div class="course-card all show">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DSA Course</h3>
-          <p class="course-desc">Master algorithms & data structures.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card all show">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Aptitude Course</h3>
-          <p class="course-desc">Sharpen your logical reasoning skills.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card all show">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Data Science Course</h3>
-          <p class="course-desc">Explore data & build predictive models.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card all show">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Operating Systems</h3>
-          <p class="course-desc">Understand OS concepts and design.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card all show">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Networking Basics</h3>
-          <p class="course-desc">Dive into the world of networks.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card all show">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Soft Skills</h3>
-          <p class="course-desc">Improve communication & teamwork.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
+  <img src="images\DSA_Logo\DSA_Image.jpg" alt="DSA Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DSA Course</h3>
+    <p class="course-desc">Master algorithms & data structures.</p>
+    <a href="/courses/dsa" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card all show">
+   <img src="images\Applitude_Logo\Applitude_images.jpg" alt="Applitude Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Aptitude Course</h3>
+    <p class="course-desc">Sharpen your logical reasoning skills.</p>
+    <a href="/courses/aptitude" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card all show">
+  <img src="images\DATAScience_logo\Datascience_logo.jpg" alt="DATASCIENCE Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Data Science Course</h3>
+    <p class="course-desc">Explore data & build predictive models.</p>
+    <a href="/courses/data-science" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card all show">
+  <img src="images\Operating_system_Logo\Operating_systemimage.jpg" alt="OPERATING SYSTEM Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Operating Systems</h3>
+    <p class="course-desc">Understand OS concepts and design.</p>
+    <a href="/courses/os" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card all show">
+  <img src="images\NETWORKING_Logo\Networking_image.jpg" alt="NETWORKING Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Networking Basics</h3>
+    <p class="course-desc">Dive into the world of networks.</p>
+    <a href="/courses/networking" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card all show">
+  <img src="images\Soft_skills_Logo\Softskill_images.jpg" alt="SOFTSKILLS Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Soft Skills</h3>
+    <p class="course-desc">Improve communication & teamwork.</p>
+    <a href="/courses/soft-skills" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
 
       <!-- DSA -->
-      <div class="course-card dsa">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DSA Course 1</h3>
-          <p class="course-desc">Learn sorting algorithms.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card dsa">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DSA Course 2</h3>
-          <p class="course-desc">Master recursion techniques.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card dsa">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DSA Course 3</h3>
-          <p class="course-desc">Grasp data structures deeply.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card dsa">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DSA Course 4</h3>
-          <p class="course-desc">Learn graph algorithms.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card dsa">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DSA Course 5</h3>
-          <p class="course-desc">Dynamic programming mastery.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
+     <div class="course-card dsa">
+  <img src="images\DSA_Logo\DSA_Image.jpg" alt="DSA Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DSA Course 1</h3>
+    <p class="course-desc">Learn sorting algorithms.</p>
+    <a href="https://www.youtube.com/watch?v=HGk_ypEuS24&list=PLyPvmU8zOvFl-XPak-nKr2HYMEo_fSEK_" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card dsa">
+  <img src="images\DSA_Logo\DSA_Image.jpg" alt="DSA Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DSA Course 2</h3>
+    <p class="course-desc">Master recursion techniques.</p>
+    <a href="https://www.youtube.com/watch?v=kHi1DUhp9kM&list=PL_z_8CaSLPWeT1ffjiImo0sYTcnLzo-wY" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card dsa">
+  <img src="images\DSA_Logo\DSA_Image.jpg" alt="DSA Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DSA Course 3</h3>
+    <p class="course-desc">Grasp data structures deeply.</p>
+    <a href="https://www.youtube.com/watch?v=0IAPZzGSbME&list=PLAXnLdrLnQpRcveZTtD644gM9uzYqJCwr&pp=0gcJCWMEOCosWNin" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card dsa">
+  <img src="images\DSA_Logo\DSA_Image.jpg" alt="DSA Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DSA Course 4</h3>
+    <p class="course-desc">Learn graph algorithms.</p>
+    <a href="https://www.youtube.com/watch?v=M3_pLsDdeuU&list=PLgUwDviBIf0oE3gA41TKO2H5bHpPd7fzn" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
+<div class="course-card dsa">
+  <img src="images\DSA_Logo\DSA_Image.jpg" alt="DSA Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DSA Course 5</h3>
+    <p class="course-desc">Dynamic programming mastery.</p>
+    <a href="https://www.youtube.com/watch?v=FfXoiwwnxFw&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY" class="enroll-btn">Enroll Now</a>
+  </div>
+</div>
+
 
       <!-- Aptitude -->
       <div class="course-card aptitude">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Aptitude Course 1</h3>
-          <p class="course-desc">Quantitative aptitude basics.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card aptitude">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Aptitude Course 2</h3>
-          <p class="course-desc">Logical reasoning drills.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card aptitude">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Aptitude Course 3</h3>
-          <p class="course-desc">Problem solving challenges.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card aptitude">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Aptitude Course 4</h3>
-          <p class="course-desc">Math tricks & techniques.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card aptitude">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Aptitude Course 5</h3>
-          <p class="course-desc">Advance logical reasoning.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
+  <img src="images\Applitude_Logo\Applitude_images.jpg" alt="Applitude Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Aptitude Course 1</h3>
+    <p class="course-desc">Quantitative aptitude basics.</p>
+    <a href="https://www.geeksforgeeks.org/quantitative-aptitude/"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card aptitude">
+ <img src="images\Applitude_Logo\Applitude_images.jpg" alt="Applitude Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Aptitude Course 2</h3>
+    <p class="course-desc">Logical reasoning drills.</p>
+    <a href="https://www.geeksforgeeks.org/aptitude/logical-reasoning/"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card aptitude">
+  <img src="images\Applitude_Logo\Applitude_images.jpg" alt="Applitude Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Aptitude Course 3</h3>
+    <p class="course-desc">Problem solving challenges.</p>
+    <a href="https://www.indiabix.com/aptitude/questions-and-answers/"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card aptitude">
+ <img src="images\Applitude_Logo\Applitude_images.jpg" alt="Applitude Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Aptitude Course 4</h3>
+    <p class="course-desc">Math tricks & techniques.</p>
+    <a href="https://www.geeksforgeeks.org/maths/math-tricks/"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card aptitude">
+  <img src="images\Applitude_Logo\Applitude_images.jpg" alt="Applitude Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Aptitude Course 5</h3>
+    <p class="course-desc">Advance logical reasoning.</p>
+    <a href="https://www.youtube.com/watch?v=x0WkptLF6oE&list=PLpyc33gOcbVADMKqylI__O_O_RMeHTyNK"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
 
       <!-- Data Science -->
       <div class="course-card ds">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DS Course 1</h3>
-          <p class="course-desc">Introduction to data science.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card ds">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DS Course 2</h3>
-          <p class="course-desc">Python for data analysis.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card ds">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DS Course 3</h3>
-          <p class="course-desc">Data visualization tools.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card ds">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DS Course 4</h3>
-          <p class="course-desc">Machine learning basics.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card ds">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">DS Course 5</h3>
-          <p class="course-desc">Deep learning overview.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
+  <img src="images\DATAScience_logo\Datascience_logo.jpg" alt="DATASCIENCE Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DS Course 1</h3>
+    <p class="course-desc">Introduction to data science.</p>
+    <a href="https://www.youtube.com/watch?v=N6BghzuFLIg&pp=ygUcSW50cm9kdWN0aW9uIHRvIGRhdGEgc2NpZW5jZQ%3D%3D"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card ds">
+  <img src="images\DATAScience_logo\Datascience_logo.jpg" alt="DATASCIENCE Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DS Course 2</h3>
+    <p class="course-desc">Python for data analysis.</p>
+    <a href="https://www.youtube.com/watch?v=2_6O39UdFi0&list=PLiC1doDIe9rCYWmH9wIEYEXXaJ4KAi3jc"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card ds">
+  <img src="images\DATAScience_logo\Datascience_logo.jpg" alt="DATASCIENCE Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DS Course 3</h3>
+    <p class="course-desc">Data visualization tools.</p>
+    <a href="https://www.youtube.com/watch?v=jQ5_DfX6CZg&list=PLZoTAELRMXVPl9iur3fIM48BI-f4og9fb"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card ds">
+  <img src="images\DATAScience_logo\Datascience_logo.jpg" alt="DATASCIENCE Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DS Course 4</h3>
+    <p class="course-desc">Machine learning basics.</p>
+    <a href="https://www.youtube.com/watch?v=ukzFI9rgwfU&list=PLEiEAq2VkUULYYgj13YHUWmRePqiu8Ddy"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card ds">
+  <img src="images\DATAScience_logo\Datascience_logo.jpg" alt="DATASCIENCE Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">DS Course 5</h3>
+    <p class="course-desc">Deep learning overview.</p>
+    <a href="https://www.youtube.com/watch?v=gZmobeGL0Yg&list=PLZbbT5o_s2xq7LwI2y8_QtvuXZedL6tQU-*"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
 
       <!-- Operating System -->
       <div class="course-card os">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">OS Course 1</h3>
-          <p class="course-desc">Basics of OS and processes.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card os">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">OS Course 2</h3>
-          <p class="course-desc">Memory management concepts.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card os">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">OS Course 3</h3>
-          <p class="course-desc">Process scheduling techniques.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card os">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">OS Course 4</h3>
-          <p class="course-desc">File system & disk structure.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card os">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">OS Course 5</h3>
-          <p class="course-desc">Deadlocks and solutions.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
+  <img src="images\Operating_system_Logo\Operating_systemimage.jpg" alt="OPERATING SYSTEM Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">OS Course 1</h3>
+    <p class="course-desc">Basics of OS and processes.</p>
+    <a href="https://www.youtube.com/watch?v=OrM7nZcxXZU&list=PLBlnK6fEyqRgKl0MbI6kbI5ffNt7BF8Fn"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card os">
+  <img src="images\Operating_system_Logo\Operating_systemimage.jpg" alt="OPERATING SYSTEM Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">OS Course 2</h3>
+    <p class="course-desc">Memory management concepts.</p>
+    <a href="https://www.youtube.com/watch?v=eESIFJz7mJw&pp=ygUaTWVtb3J5IG1hbmFnZW1lbnQgY29uY2VwdHM%3D"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card os">
+  <img src="images\Operating_system_Logo\Operating_systemimage.jpg" alt="OPERATING SYSTEM Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">OS Course 3</h3>
+    <p class="course-desc">Process scheduling techniques.</p>
+    <a href="https://www.youtube.com/watch?v=zFnrUVqtiOY&list=PLGF9VeuyJzDfFEeiK2N9NYhHedyEHQHxI"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card os">
+  <img src="images\Operating_system_Logo\Operating_systemimage.jpg" alt="OPERATING SYSTEM Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">OS Course 4</h3>
+    <p class="course-desc">File system & disk structure.</p>
+    <a href="https://www.youtube.com/watch?v=DYGIPiez5GY&list=PLySKRj7KSLYgS9jVyonZTFpiYkIzZXF2-"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card os">
+  <img src="images\Operating_system_Logo\Operating_systemimage.jpg" alt="OPERATING SYSTEM Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">OS Course 5</h3>
+    <p class="course-desc">Deadlocks and solutions.</p>
+    <a href="https://www.youtube.com/watch?v=_zOTMOubT1M&list=PLKvlVXf2hXAPrRXE_B8LWW25r5DJVe7Yv"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
 
       <!-- Networking -->
       <div class="course-card cn">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">CN Course 1</h3>
-          <p class="course-desc">Introduction to networking.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card cn">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">CN Course 2</h3>
-          <p class="course-desc">OSI model explained.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card cn">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">CN Course 3</h3>
-          <p class="course-desc">IP addressing fundamentals.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card cn">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">CN Course 4</h3>
-          <p class="course-desc">TCP/IP stack overview.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card cn">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">CN Course 5</h3>
-          <p class="course-desc">Networking tools & utilities.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
+  <img src="images\NETWORKING_Logo\Networking_image.jpg" alt="NETWORKING Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">CN Course 1</h3>
+    <p class="course-desc">Introduction to networking.</p>
+    <a href="https://www.youtube.com/watch?v=VwN91x5i25g&list=PLBlnK6fEyqRgneraVKkEXrwyLVx2vJUvt"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card cn">
+  <img src="images\NETWORKING_Logo\Networking_image.jpg" alt="NETWORKING Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">CN Course 2</h3>
+    <p class="course-desc">OSI model explained.</p>
+    <a href="https://www.youtube.com/watch?v=4D55Cmj2t-A&list=PLFLVHSOGJXqIqz9edu0BNeSTrr0uJByuv"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card cn">
+ <img src="images\NETWORKING_Logo\Networking_image.jpg" alt="NETWORKING Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">CN Course 3</h3>
+    <p class="course-desc">IP addressing fundamentals.</p>
+    <a href="https://www.youtube.com/watch?v=P7g--FJdUXE&pp=ygUpSVAgYWRkcmVzc2luZyBmdW5kYW1lbnRhbHMuIGdhdGUgc21hc3NlcnM%3D"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card cn">
+  <img src="images\NETWORKING_Logo\Networking_image.jpg" alt="NETWORKING Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">CN Course 4</h3>
+    <p class="course-desc">TCP/IP stack overview.</p>
+    <a href="https://www.youtube.com/watch?v=TVr0RZ1-74g&pp=ygUfVENQL0lQIHN0YWNrIG92ZXJ2aWV3IHBsYXlsaXN0cw%3D%3D"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card cn">
+  <img src="images\NETWORKING_Logo\Networking_image.jpg" alt="NETWORKING Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">CN Course 5</h3>
+    <p class="course-desc">Networking tools & utilities.</p>
+    <a href="https://www.youtube.com/watch?v=Hizdc4XVJ1E&list=PLqleLpAMfxGCUpDRFUnLKeDrgBsPOwTQK"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
 
       <!-- Soft Skills -->
       <div class="course-card soft">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Soft Skills 1</h3>
-          <p class="course-desc">Effective communication skills.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card soft">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Soft Skills 2</h3>
-          <p class="course-desc">Public speaking confidence.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card soft">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Soft Skills 3</h3>
-          <p class="course-desc">Resume writing & etiquette.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card soft">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Soft Skills 4</h3>
-          <p class="course-desc">Teamwork & collaboration.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-      <div class="course-card soft">
-        <div class="image-placeholder"></div>
-        <div class="card-content">
-          <h3 class="course-title">Soft Skills 5</h3>
-          <p class="course-desc">Handling interviews & stress.</p>
-          <button class="enroll-btn">Enroll Now</button>
-        </div>
-      </div>
-    </div>
+  <img src="images\Soft_skills_Logo\Softskill_images.jpg" alt="SOFTSKILLS Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Soft Skills 1</h3>
+    <p class="course-desc">Effective communication skills.</p>
+    <a href="https://www.youtube.com/watch?v=HAnw168huqA&pp=ygUvZWZmZWN0aXZlIGNvbW11bmljYXRpb24gc2tpbGxzIGluIHRoZSB3b3JrcGxhY2U%3D"><button class="enroll-btn">Enroll Now</button></a>
   </div>
+</div>
+
+<div class="course-card soft">
+  <img src="images\Soft_skills_Logo\Softskill_images.jpg" alt="SOFTSKILLS Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Soft Skills 2</h3>
+    <p class="course-desc">Public speaking confidence.</p>
+    <a href="https://www.youtube.com/watch?v=IitIl2C3Iy8&pp=ygUbUHVibGljIHNwZWFraW5nIGNvbmZpZGVuY2Uu0gcJCb4JAYcqIYzv"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card soft">
+  <img src="images\Soft_skills_Logo\Softskill_images.jpg" alt="SOFTSKILLS Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Soft Skills 3</h3>
+    <p class="course-desc">Resume writing & etiquette.</p>
+    <a href="https://www.indeed.com/career-advice/resumes-cover-letters/resume-writing-101"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card soft">
+  <img src="images\Soft_skills_Logo\Softskill_images.jpg" alt="SOFTSKILLS Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Soft Skills 4</h3>
+    <p class="course-desc">Teamwork & collaboration.</p>
+    <a href="https://www.indeed.com/career-advice/career-development/teamwork-and-collaboration"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
+<div class="course-card soft">
+  <img src="images\Soft_skills_Logo\Softskill_images.jpg" alt="SOFTSKILLS Course Image" class="course-image">
+  <div class="card-content">
+    <h3 class="course-title">Soft Skills 5</h3>
+    <p class="course-desc">Handling interviews & stress.</p>
+    <a href="https://www.indeed.com/career-advice/interviewing/stress-interviewing"><button class="enroll-btn">Enroll Now</button></a>
+  </div>
+</div>
+
 </section>
 
 
     <!-- notes -->
     <!-- Notes and DSA Sheets Section -->
-    <section class="notes-dsa-section">
+   <section class="notes-dsa-section">
   <div class="container">
     <h2 class="section-title">Notes & DSA Sheets</h2>
 
@@ -422,228 +467,53 @@
 
     <div class="notes-grid">
       <!-- DSA Sheets -->
-      <div class="note-card dsa-sheets show">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Sheet 1</p>
-      </div>
-      <div class="note-card dsa-sheets show">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Sheet 2</p>
-      </div>
-      <div class="note-card dsa-sheets show">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Sheet 3</p>
-      </div>
-      <div class="note-card dsa-sheets show">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Sheet 4</p>
-      </div>
-      <div class="note-card dsa-sheets show">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Sheet 5</p>
-      </div>
+      <div class="note-card dsa-sheets show"><a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Sheet 1</p></a></div>
+      <div class="note-card dsa-sheets show"><a href="https://neetcode.io/practice" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Sheet 2</p></a></div>
+      <div class="note-card dsa-sheets show"><a href="https://www.geeksforgeeks.org/dsa/dsa-sheet-by-love-babbar/" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Sheet 3</p></a></div>
+      <div class="note-card dsa-sheets show"><a href="https://450dsa.com/" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Sheet 4</p></a></div>
+      <div class="note-card dsa-sheets show"><a href="https://www.apnacollege.in/dsa-practice-qs" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Sheet 5</p></a></div>
 
       <!-- DSA Notes -->
-      <div class="note-card dsa-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Note 1</p>
-      </div>
-      <div class="note-card dsa-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Note 2</p>
-      </div>
-      <div class="note-card dsa-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Note 3</p>
-      </div>
-      <div class="note-card dsa-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Note 4</p>
-      </div>
-      <div class="note-card dsa-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">DSA Note 5</p>
-      </div>
+      <div class="note-card dsa-notes"><a href="https://www.geeksforgeeks.org/top-100-data-structure-and-algorithms-dsa-interview-questions-topic-wise/" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Note 1</p></a></div>
+      <div class="note-card dsa-notes"><a href="https://www.apnacollege.in/notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Note 2</p></a></div>
+      <div class="note-card dsa-notes"><a href="https://github.com/Chinmay2660/DSA-By-Abdul-Bari" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Note 3</p></a></div>
+      <div class="note-card dsa-notes"><a href="https://www.codewithharry.com/notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Note 4</p></a></div>
+      <div class="note-card dsa-notes"><a href="https://github.com/Deeksha2501/Data-Structures-and-Algorithms-Notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">DSA Note 5</p></a></div>
 
       <!-- ML Notes -->
-      <div class="note-card ml-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">ML Note 1</p>
-      </div>
-      <div class="note-card ml-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">ML Note 2</p>
-      </div>
-      <div class="note-card ml-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">ML Note 3</p>
-      </div>
-      <div class="note-card ml-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">ML Note 4</p>
-      </div>
-      <div class="note-card ml-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">ML Note 5</p>
-      </div>
+      <div class="note-card ml-notes"><a href="https://github.com/Dev-Gaju/Machine-Learning-Starter/blob/main/Machine%20Learning%20Lecture%20Notes.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">ML Note 1</p></a></div>
+      <div class="note-card ml-notes"><a href="https://github.com/federicobrancasi/MachineLearningNotes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">ML Note 2</p></a></div>
+      <div class="note-card ml-notes"><a href="https://web.stanford.edu/~mossr/pdf/cs229-ml-notes.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">ML Note 3</p></a></div>
+      <div class="note-card ml-notes"><a href="https://rtavenar.github.io/deep_book/book_en.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">ML Note 4</p></a></div>
+      <div class="note-card ml-notes"><a href="https://stanford.edu/~shervine/teaching/cs-230" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">ML Note 5</p></a></div>
 
       <!-- OS Notes -->
-      <div class="note-card os-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">OS Note 1</p>
-      </div>
-      <div class="note-card os-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">OS Note 2</p>
-      </div>
-      <div class="note-card os-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">OS Note 3</p>
-      </div>
-      <div class="note-card os-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">OS Note 4</p>
-      </div>
-      <div class="note-card os-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">OS Note 5</p>
-      </div>
+      <div class="note-card os-notes"><a href="https://techiefood4u.files.wordpress.com/2020/02/operating_systems_three_easy_pieces.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">OS Note 1</p></a></div>
+      <div class="note-card os-notes"><a href="https://www.cl.cam.ac.uk/teaching/1011/OpSystems/os1a-slides.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">OS Note 2</p></a></div>
+      <div class="note-card os-notes"><a href="https://github.com/XDZhelheim/CS302-Operating-System-Notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">OS Note 3</p></a></div>
+      <div class="note-card os-notes"><a href="https://github.com/cem-yilmaz/OS-Revision" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">OS Note 4</p></a></div>
+      <div class="note-card os-notes"><a href="https://github.com/mohamedameen93/CS-6210-Advanced-Operating-Systems-Notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">OS Note 5</p></a></div>
 
       <!-- Networking Notes -->
-      <div class="note-card network-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Networking Note 1</p>
-      </div>
-      <div class="note-card network-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Networking Note 2</p>
-      </div>
-      <div class="note-card network-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Networking Note 3</p>
-      </div>
-      <div class="note-card network-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Networking Note 4</p>
-      </div>
-      <div class="note-card network-notes">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Networking Note 5</p>
-      </div>
+      <div class="note-card network-notes"><a href="https://github.com/MaheshShukla1/Networking-Fundamentals-Notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Networking Note 1</p></a></div>
+      <div class="note-card network-notes"><a href="https://github.com/VasanthVanan/computer-networking-top-down-approach-notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Networking Note 2</p></a></div>
+      <div class="note-card network-notes"><a href="https://www.vssut.ac.in/lecture_notes/lecture1423905560.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Networking Note 3</p></a></div>
+      <div class="note-card network-notes"><a href="https://github.com/imran1509/Networking-Handwritten-Notes" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Networking Note 4</p></a></div>
+      <div class="note-card network-notes"><a href="https://ftp.mi.fu-berlin.de/pub/schiller/inverted/OSCN/OSCN_10_Internetworking.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Networking Note 5</p></a></div>
 
       <!-- Aptitude & Reasoning -->
-      <div class="note-card aptitude">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Aptitude Note 1</p>
-      </div>
-      <div class="note-card aptitude">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Aptitude Note 2</p>
-      </div>
-      <div class="note-card aptitude">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Aptitude Note 3</p>
-      </div>
-      <div class="note-card aptitude">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Aptitude Note 4</p>
-      </div>
-      <div class="note-card aptitude">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Aptitude Note 5</p>
-      </div>
+      <div class="note-card aptitude"><a href="https://toppersnotes-main.s3.ap-south-1.amazonaws.com/wp-content/uploads/2022/12/22151633/Volume-2-22-12.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Aptitude Note 1</p></a></div>
+      <div class="note-card aptitude"><a href="https://gnindia.dronacharya.info/Study-Materials/Download/Logical-Reasoning.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Aptitude Note 2</p></a></div>
+      <div class="note-card aptitude"><a href="https://pdf.bankexamstoday.com/raman_files/QT-Cheatsheet.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Aptitude Note 3</p></a></div>
+      <div class="note-card aptitude"><a href="https://www.jatinderjyoti.in/pg/notes/reasoning/NUMBER_SERIES.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Aptitude Note 4</p></a></div>
+      <div class="note-card aptitude"><a href="https://www.indiabix.com/aptitude/questions-and-answers/" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Aptitude Note 5</p></a></div>
 
       <!-- Other -->
-      <div class="note-card other">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Other Note 1</p>
-      </div>
-      <div class="note-card other">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Other Note 2</p>
-      </div>
-      <div class="note-card other">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Other Note 3</p>
-      </div>
-      <div class="note-card other">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Other Note 4</p>
-      </div>
-      <div class="note-card other">
-        <div class="square-box">
-          <img src="/images/Note.png" alt="Notes" class="note-image" />
-        </div>
-        <p class="note-title">Other Note 5</p>
-      </div>
+      <div class="note-card other"><a href="https://www.resumebuilder.com/resume-examples/engineering/" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Other Note 1</p></a></div>
+      <div class="note-card other"><a href="https://career.egr.uh.edu/sites/career.egr.uh.edu/files/files/STAR-Tech-and-General-Sample-Questions.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Other Note 2</p></a></div>
+      <div class="note-card other"><a href="https://github.com/yangshun/tech-interview-handbook" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Other Note 3</p></a></div>
+      <div class="note-card other"><a href="https://eng.umd.edu/sites/clark.umd.edu/files/LinkedIn%20Tips.pdf" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Other Note 4</p></a></div>
+      <div class="note-card other"><a href="https://www.reddit.com/r/webdev/comments/z5oinl/complete_technical_interview_preparation_cheat/" target="_blank"><div class="square-box"><img src="/images/Note.png" alt="Notes" class="note-image" /></div><p class="note-title">Other Note 5</p></a></div>
     </div>
   </div>
 </section>
@@ -651,38 +521,67 @@
 
     <!-- certifications -->
     <section class="certifications-section">
-      <h2 class="section-title">Popular Certifications</h2>
-      <div class="certifications-container">
-        <div class="certification-card">
-          <div class="cert-img"></div>
-          <p class="cert-title">Data Science Certification</p>
-        </div>
-        <div class="certification-card">
-          <div class="cert-img"></div>
-          <p class="cert-title">Full Stack Developer</p>
-        </div>
-        <div class="certification-card">
-          <div class="cert-img"></div>
-          <p class="cert-title">Cloud Computing</p>
-        </div>
-        <div class="certification-card">
-          <div class="cert-img"></div>
-          <p class="cert-title">Cybersecurity</p>
-        </div>
-        <div class="certification-card">
-          <div class="cert-img"></div>
-          <p class="cert-title">Machine Learning</p>
-        </div>
-        <div class="certification-card">
-          <div class="cert-img"></div>
-          <p class="cert-title">DevOps Engineering</p>
-        </div>
-        <div class="certification-card">
-          <div class="cert-img"></div>
-          <p class="cert-title">Data Analyst Pro</p>
-        </div>
-      </div>
-    </section>
+  <h2 class="section-title">Popular Certifications</h2>
+  <div class="certifications-container">
+
+  <div class="certification-card">
+  <a href="https://skillsbuild.org/students/course-catalog/data-science" target="_blank">
+    <div class="cert-img" style="background-image: url('images/DATAScience_logo/Datascience_logo.jpg'); background-size: cover; background-position: center;"></div>
+    <p class="cert-title">Data Science Certification</p>
+  </a>
+</div>
+
+
+    <div class="certification-card">
+  <a href="https://infyspringboard.us.onwingspan.com/" target="_blank">
+    <div class="cert-img" style="background-image: url('images/FULLSTACK_Logo/FULLstack_img.png'); background-size: cover; background-position: center;"></div>
+    <p class="cert-title">Full Stack Developer</p>
+  </a>
+</div>
+
+
+
+    <div class="certification-card">
+  <a href="cert-cloud-computing.html" target="_blank">
+    <div class="cert-img" style="background-image: url('images/CloudComputing_logo/CloudComputing_Logo.png'); background-size: cover; background-position: center;"></div>
+    <p class="cert-title">Cloud Computing</p>
+  </a>
+</div>
+
+
+    <div class="certification-card">
+  <a href="cert-cybersecurity.html" target="_blank">
+    <div class="cert-img" style="background-image: url('images/CyberSEcurityLogo/CyberSecurityimg.jpg'); background-size: cover; background-position: center;"></div>
+    <p class="cert-title">Cybersecurity</p>
+  </a>
+</div>
+
+
+    <div class="certification-card">
+  <a href="cert-ml.html" target="_blank">
+    <div class="cert-img" style="background-image: url('images/MachineLearning_logo/MachineLearning_Logo.jpg'); background-size: cover; background-position: center;"></div>
+    <p class="cert-title">Machine Learning</p>
+  </a>
+</div>
+
+
+    <div class="certification-card">
+  <a href="cert-devops.html" target="_blank">
+    <div class="cert-img" style="background-image: url('images/DevOps%20Engineering_Logo/DevOps%20Engineering.png'); background-size: cover; background-position: center;"></div>
+    <p class="cert-title">DevOps Engineering</p>
+  </a>
+</div>
+
+
+   <div class="certification-card">
+  <a href="cert-data-analyst.html" target="_blank">
+    <div class="cert-img" style="background-image: url('images/DATAScience_logo/Datascience_logo.jpg'); background-size: cover; background-position: center;"></div>
+    <p class="cert-title">Data Analyst Pro</p>
+  </a>
+</div>
+
+  </div>
+</section>
 
     <!-- coding -->
     <section class="practice-platforms">
@@ -695,22 +594,22 @@
       <a href="https://www.geeksforgeeks.org/" target="_blank" class="platform-card">
         <img src="/images/logo/logo2.png" alt="Logo 2" />
       </a>
-      <a href="https://example3.com" target="_blank" class="platform-card">
+      <a href="https://www.codechef.com/" target="_blank" class="platform-card">
         <img src="/images/logo/logo3.png" alt="Logo 3" />
       </a>
-      <a href="https://example4.com" target="_blank" class="platform-card">
+      <a href="https://www.hackerrank.com/" target="_blank" class="platform-card">
         <img src="/images/logo/logo4.png" alt="Logo 4" />
       </a>
-      <a href="https://example5.com" target="_blank" class="platform-card">
+      <a href="https://codeforces.com/" target="_blank" class="platform-card">
         <img src="/images/logo/logo5.png" alt="Logo 5" />
       </a>
-      <a href="https://example6.com" target="_blank" class="platform-card">
+      <a href="https://www.codingninjas.com/" target="_blank" class="platform-card">
         <img src="/images/logo/logo6.png" alt="Logo 6" />
       </a>
-      <a href="https://example7.com" target="_blank" class="platform-card">
+      <a href="https://takeuforward.org/" target="_blank" class="platform-card">
         <img src="/images/logo/logo7.png" alt="Logo 7" />
       </a>
-      <a href="https://example8.com" target="_blank" class="platform-card">
+      <a href="https://replit.com/" target="_blank" class="platform-card">
         <img src="/images/logo/logo8.png" alt="Logo 8" />
       </a>
     </div>

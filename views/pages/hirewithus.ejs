@@ -34,7 +34,9 @@
         </nav>
   
         <% if (student) { %>
-          <span class="user-greet">👋 <%= student.name %></span>
+          <a href="/profile" class="user-greet-link">
+            👋 <%= student.name %>
+          </a>
           <a href="/logout">
             <button class="login-btn">Logout</button>
           </a>

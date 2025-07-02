@@ -8,95 +8,101 @@
       name="description"
       content="Where preparation meets opportunity - driving student success with real-world connections. Professional career placement services."
     />
-    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="/css/home.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-   <!-- Header -->
-   <header class="header">
-    <div class="container">
-      <div class="nav-wrapper">
-        <div class="logo">
-          <a href="/" style="text-decoration: none; color: inherit">
-            <h1><span class="logo-accent">Place</span>Cell</h1>
-          </a>
-        </div>
-
-        <nav class="nav-desktop">
-          <a href="/dashboard" class="nav-link">Home</a>
-          <a href="/training" class="nav-link">Training</a>
-          <a href="/placement" class="nav-link">Placement</a>
-          <a href="/statistics" class="nav-link">Statistics</a>
-          <a href="/hirewithus" class="nav-link">Hire with Us</a>
-        </nav>
-
-        <% if (student) { %>
-          <span class="user-greet">👋 <%= student.name %></span>
-          <a href="/logout">
-            <button class="login-btn">Logout</button>
-          </a>
-        <% } else { %>
-          <a href="/login/student">
-            <button class="login-btn">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              Login
-            </button>
-          </a>
-        <% } %>
-
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-  <!-- Dashboard Body -->
-  
-
-
-    <!-- Hero Section -->
-    <section class="hero">
+    <header class="header">
       <div class="container">
-        <section class="dashboard">
-            <div class="container">
-              <h1>Welcome, <%= student.name %>!</h1>
-              <!-- Add more student data here as needed -->
-            </div>
-          </section>
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1 class="hero-title">
-              Launch your <br />
-              <span class="gradient-text">Professional Career.</span>
-            </h1>
-            <!-- <p class="hero-description">
-                        Where preparation meets opportunity - driving student success with real-world connections.
-                    </p> -->
-           
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="/" style="text-decoration: none; color: inherit">
+              <h1><span class="logo-accent">Place</span>Cell</h1>
+            </a>
           </div>
-
-          <div class="hero-illustration">
-            <img src="/images/Frame.png" alt="Image" />
-          </div>
+    
+          <nav class="nav-desktop">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/training" class="nav-link">Training</a>
+            <a href="/placement" class="nav-link">Placement</a>
+            <a href="/statistics" class="nav-link">Statistics</a>
+            <a href="/hirewithus" class="nav-link">Hire with Us</a>
+          </nav>
+    
+          <% if (student) { %>
+            <a href="/profile" class="user-greet-link">
+              👋 <%= student.name %>
+            </a>
+            <a href="/logout">
+              <button class="login-btn">Logout</button>
+            </a>
+          <% } else { %>
+            <a href="/login/student">
+              <button class="login-btn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Login
+              </button>
+            </a>
+          <% } %>
+    
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
-    </section>
+    </header>
 
+       <!-- Hero Section -->
+       <section class="hero">
+        <div class="container">
+          <section class="dashboard">
+              <div class="container">
+                <% if (student) { %>
+                  <h1>Welcome, <%= student.name %>!</h1>
+                <% } else { %>
+                  <h1>Welcome, Guest!</h1>
+                <% } %>
+                
+                <!-- Add more student data here as needed -->
+              </div>
+            </section>
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">
+                Launch your <br />
+                <span class="gradient-text">Professional Career.</span>
+                
+              </h1>
+              <% if (!student) { %>
+                <a href="/signup/student" class="register-btn">Register Now</a>
+              <% } %>
+              <!-- <p class="hero-description">
+                          Where preparation meets opportunity - driving student success with real-world connections.
+                      </p> -->
+             
+            </div>
+  
+            <div class="hero-illustration">
+              <img src="/images/Frame.png" alt="Image" />
+            </div>
+          </div>
+        </div>
+      </section>
    <!-- Statistics Section -->
    <section class="stats-section" id="statistics">
     <div class="container">
@@ -248,211 +254,210 @@
       </div>
     </section>
 
- <!-- Top Companies Section -->
- <section class="top-companies">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Explore Jobs In Top Companies</h2>
-        <p class="section-description">
-          Discover exciting career opportunities at leading companies across
-          various industries.
-        </p>
-      </div>
+    <!-- Top Companies Section -->
+    <section class="top-companies">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Explore Jobs In Top Companies</h2>
+          <p class="section-description">
+            Discover exciting career opportunities at leading companies across
+            various industries.
+          </p>
+        </div>
 
-      <div class="companies-grid" id="companiesGrid">
-        <!-- Companies will be loaded dynamically -->
         <div class="companies-grid" id="companiesGrid">
+          <!-- Companies will be loaded dynamically -->
           <div class="companies-grid" id="companiesGrid">
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo1.png"
-                  alt="TCS"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>TCS</h3>
-                  <p>IT Services</p>
+            <div class="companies-grid" id="companiesGrid">
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo1.png"
+                    alt="TCS"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>TCS</h3>
+                    <p>IT Services</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Global leader in IT services and consulting
+                <div class="company-details">
+                  <div class="company-detail">
+                    Global leader in IT services and consulting
+                  </div>
                 </div>
+                <a href="https://www.tcs.com/careers" target="_blank">
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a href="https://www.tcs.com/careers" target="_blank">
-                <button class="company-btn">Visit Careers</button>
-              </a>
-            </div>
 
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo8.png"
-                  alt="Wipro"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>Wipro</h3>
-                  <p>Technology</p>
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo8.png"
+                    alt="Wipro"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>Wipro</h3>
+                    <p>Technology</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Innovation-led digital transformation
+                <div class="company-details">
+                  <div class="company-detail">
+                    Innovation-led digital transformation
+                  </div>
                 </div>
+                <a href="https://careers.wipro.com" target="_blank">
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a href="https://careers.wipro.com" target="_blank">
-                <button class="company-btn">Visit Careers</button>
-              </a>
-            </div>
 
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo3.png"
-                  alt="Infosys"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>Infosys</h3>
-                  <p>Consulting & IT</p>
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo3.png"
+                    alt="Infosys"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>Infosys</h3>
+                    <p>Consulting & IT</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Building tomorrow’s enterprise
+                <div class="company-details">
+                  <div class="company-detail">
+                    Building tomorrow’s enterprise
+                  </div>
                 </div>
+                <a href="https://www.infosys.com/careers/" target="_blank">
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a href="https://www.infosys.com/careers/" target="_blank">
-                <button class="company-btn">Visit Careers</button>
-              </a>
-            </div>
 
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo4.png"
-                  alt="Accenture"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>Accenture</h3>
-                  <p>Consulting</p>
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo4.png"
+                    alt="Accenture"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>Accenture</h3>
+                    <p>Consulting</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Global professional services company
+                <div class="company-details">
+                  <div class="company-detail">
+                    Global professional services company
+                  </div>
                 </div>
+                <a
+                  href="https://www.accenture.com/in-en/careers"
+                  target="_blank"
+                >
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a
-                href="https://www.accenture.com/in-en/careers"
-                target="_blank"
-              >
-                <button class="company-btn">Visit Careers</button>
-              </a>
-            </div>
 
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo5.png"
-                  alt="Capgemini"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>Capgemini</h3>
-                  <p>IT Consulting</p>
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo5.png"
+                    alt="Capgemini"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>Capgemini</h3>
+                    <p>IT Consulting</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Technology and engineering services
+                <div class="company-details">
+                  <div class="company-detail">
+                    Technology and engineering services
+                  </div>
                 </div>
+                <a href="https://www.capgemini.com/careers/" target="_blank">
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a href="https://www.capgemini.com/careers/" target="_blank">
-                <button class="company-btn">Visit Careers</button>
-              </a>
-            </div>
 
-            
+              
 
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo15.png"
-                  alt="HCL"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>HCL</h3>
-                  <p>IT Services</p>
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo15.png"
+                    alt="HCL"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>HCL</h3>
+                    <p>IT Services</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Next-gen digital transformation
+                <div class="company-details">
+                  <div class="company-detail">
+                    Next-gen digital transformation
+                  </div>
                 </div>
+                <a href="https://www.hcltech.com/careers" target="_blank">
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a href="https://www.hcltech.com/careers" target="_blank">
-                <button class="company-btn">Visit Careers</button>
-              </a>
-            </div>
 
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo16.png"
-                  alt="Tech Mahindra"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>Tech Mahindra</h3>
-                  <p>IT & Telecom</p>
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo16.png"
+                    alt="Tech Mahindra"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>Tech Mahindra</h3>
+                    <p>IT & Telecom</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Driving digital transformation
+                <div class="company-details">
+                  <div class="company-detail">
+                    Driving digital transformation
+                  </div>
                 </div>
+                <a href="https://careers.techmahindra.com" target="_blank">
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a href="https://careers.techmahindra.com" target="_blank">
-                <button class="company-btn">Visit Careers</button>
-              </a>
-            </div>
 
-            <div class="company-card">
-              <div class="company-header">
-                <img
-                  src="/images/clogo/logo17.png"
-                  alt="IBM"
-                  class="company-logo"
-                />
-                <div class="company-info">
-                  <h3>IBM</h3>
-                  <p>Tech & AI</p>
+              <div class="company-card">
+                <div class="company-header">
+                  <img
+                    src="/images/clogo/logo17.png"
+                    alt="IBM"
+                    class="company-logo"
+                  />
+                  <div class="company-info">
+                    <h3>IBM</h3>
+                    <p>Tech & AI</p>
+                  </div>
                 </div>
-              </div>
-              <div class="company-details">
-                <div class="company-detail">
-                  Building smarter businesses with AI
+                <div class="company-details">
+                  <div class="company-detail">
+                    Building smarter businesses with AI
+                  </div>
                 </div>
+                <a href="https://www.ibm.com/employment" target="_blank">
+                  <button class="company-btn">Visit Careers</button>
+                </a>
               </div>
-              <a href="https://www.ibm.com/employment" target="_blank">
-                <button class="company-btn">Visit Careers</button>
-              </a>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="section-footer">
-        <button class="btn-primary">Explore All Companies</button>
+        <div class="section-footer">
+          <button class="btn-primary">Explore All Companies</button>
+        </div>
       </div>
-    </div>
-  </section>
-
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -616,10 +621,12 @@
         </div>
       </div>
     </footer>
-    
+
+    <!-- <script src="script.js"></script> -->
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="/js/statistics.js" defer></script>
-    <!-- <script src="script.js"></script> -->
   </body>
 </html>

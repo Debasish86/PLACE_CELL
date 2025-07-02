@@ -365,6 +365,16 @@ body {
     margin-top: 10px;
   }
   
+  .user-greet-link {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1rem;
+    color: white;
+  }
+  
+  .user-greet-link:hover {
+    text-decoration: underline;
+  }
   
 /* Placement Records Section */
 .placement-section {

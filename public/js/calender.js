@@ -1,30 +1,31 @@
 
-  // Populate recent 6 days
-  const dateList = document.getElementById("dateList");
-  const days = 6;
-  const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// Populate next 7 days
+const dateList = document.getElementById("dateList");
+const totalDays = 7; // including today
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-  for (let i = days - 1; i >= 0; i--) {
-    const date = new Date();
-    date.setDate(date.getDate() - i);
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = date.toLocaleString("default", { month: "long" });
-    const year = date.getFullYear();
-    const weekday = weekdays[date.getDay()];
-    const randomTag = Math.floor(Math.random() * 30) + 1;
+for (let i = 0; i < totalDays; i++) {
+  const date = new Date();
+  date.setDate(date.getDate() + i); // move forward in time
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = date.toLocaleString("default", { month: "long" });
+  const year = date.getFullYear();
+  const weekday = weekdays[date.getDay()];
+  const randomTag = Math.floor(Math.random() * 30) + 1;
 
-    const dateCard = `
-      <div class="date-card">
-        <div>
-          <h3>${day}</h3>
-          <p>${month} ${year}<br><span>${weekday}</span></p>
-        </div>
-        <div class="date-tag">${randomTag}</div>
+  const dateCard = `
+    <div class="date-card">
+      <div>
+        <h3>${day}</h3>
+        <p>${month} ${year}<br><span>${weekday}</span></p>
       </div>
-    `;
+      <div class="date-tag">${randomTag}</div>
+    </div>
+  `;
 
-    dateList.innerHTML += dateCard;
-  }
+  dateList.innerHTML += dateCard;
+}
+
 
 
 

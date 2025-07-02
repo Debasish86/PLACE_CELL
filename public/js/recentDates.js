@@ -6,7 +6,7 @@
 
     for (let i = 0; i < 6; i++) {
       const date = new Date();
-      date.setDate(date.getDate() - i); // recent 6 days
+      date.setDate(date.getDate() + i); // recent 6 days
 
       const day = date.getDate();
       const month = date.toLocaleString('default', { month: 'long' });

@@ -75,10 +75,13 @@
       <div class="placement-container">
         <div class="placement-content">
           <h2 class="placement-title">Placement Training<br />Program</h2>
-          <button class="register-btn">Register Now</button>
+          <% if (!student) { %>
+            <button class="register-btn">Register Now</button>
+          <% } %>
+          
         </div>
         <div class="placement-box">
-  <img src="images\TLogo.jpg" alt="3D Illustration" class="placement-img" />
+  <img src="images\cgu.jpg" alt="3D Illustration" class="placement-img" />
 </div>
     </section>
 

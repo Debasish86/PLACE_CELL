@@ -9,6 +9,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyByPDk4ub237D56EpTtLLjTMVSROiw0I1k",
+        authDomain: "placecell-auth.firebaseapp.com",
+        projectId: "placecell-auth",
+        storageBucket: "placecell-auth.firebasestorage.app",
+        messagingSenderId: "391052869705",
+        appId: "1:391052869705:web:5c9702147d02d1d2a0bf98",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
   </head>
   <body>
     <!-- Header -->
@@ -19,8 +38,9 @@
             <a href="/" style="text-decoration: none; color: inherit">
               <h1><span class="logo-accent">Place</span>Cell</h1>
             </a>
-          </div> </div> </div>
-
+          </div>
+        </div>
+      </div>
     </header>
     <br /><br />
     <!-- Register Form -->
@@ -33,6 +53,7 @@
             <a href="/signup/student">REGISTER</a>
           </div>
           <p>Welcome on Your Placement Journey</p>
+          <!-- Flash Messages -->
 
           <form id="registerForm" action="/login/student" method="POST">
             <label>Email*</label>
@@ -51,7 +72,9 @@
               required
             />
 
-            <a href="#" class="forgot-password">Forgot Password?</a>
+            <a href="/forgot-password" class="forgot-password"
+              >Forgot Password?</a
+            >
             <div class="login-section">
               <button class="login-btn">LOGIN</button>
               <p>

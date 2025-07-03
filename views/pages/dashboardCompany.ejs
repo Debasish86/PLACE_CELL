@@ -67,14 +67,48 @@
   </header>
   <!-- Dashboard Body -->
   
-
+<br><br>
 <!-- Hire With Us Hero Section -->
-<section class="hire-hero" id="hire">
+<!-- <section class="hire-hero" id="hire">
     <div class="hire-container">
       <h2 class="main-heading">Coming Soon...</h2>
       
     </div>
-  </section>
+  </section> -->
+
+  <div class="job-post-box">
+    <h2>Post a Job</h2>
+    <form action="/company/post-job" method="POST">
+      
+      <div class="job-field">
+        <label for="title">Job Title</label>
+        <input type="text" name="title" id="title" required />
+      </div>
+  
+      <div class="job-field">
+        <label for="companyName">Company Name</label>
+        <input type="text" name="companyName" id="companyName" required />
+      </div>
+  
+      <div class="job-field">
+        <label for="location">Job Location</label>
+        <input type="text" name="location" id="location" required />
+      </div>
+  
+      <div class="job-field">
+        <label for="description">Job Description</label>
+        <textarea name="description" id="description" rows="4" required></textarea>
+      </div>
+  
+      <div class="job-field">
+        <label for="notification">Notification/Instructions</label>
+        <textarea name="notification" id="notification" rows="3"></textarea>
+      </div>
+  
+      <button type="submit">Submit Job</button>
+    </form>
+  </div>
+  
 
     <!-- Footer -->
     <footer class="footer">

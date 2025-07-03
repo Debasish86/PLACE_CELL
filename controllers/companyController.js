@@ -1,5 +1,5 @@
 const Company = require('../models/Company');
-
+const Job = require("../models/Job");
 // Render signup page
 exports.getSignupPage = (req, res) => {
   res.render('pages/signupCompany');
@@ -61,5 +61,28 @@ exports.loginCompany = async (req, res) => {
     console.error(error);
     req.flash('error_msg', 'Login failed. Please try again.');
     res.redirect('/login/company');
+  }
+};
+
+
+
+
+exports.postJob = async (req, res) => {
+  try {
+    const { title, companyName, location, description, notification } = req.body;
+
+    const job = new Job({
+      title,
+      companyName,
+      location,
+      description,
+      notification
+    });
+
+    await job.save();
+    res.redirect("/company"); // or show a success message
+  } catch (error) {
+    console.error("Error posting job:", error);
+    res.status(500).send("Internal Server Error");
   }
 };

@@ -19,7 +19,7 @@ exports.signupStudent = async (req, res) => {
     const newStudent = new Student({
       name,
       email,
-      password, // Note: Consider hashing later
+      password,
       phone,
       regd_no,
       semester,
@@ -27,14 +27,10 @@ exports.signupStudent = async (req, res) => {
     });
 
     await newStudent.save();
-
-    // ✅ Set session after signup
-    req.session.studentId = newStudent._id;
-
-    req.flash('success', 'Signup successful!');
+    req.flash('success', 'Signup successful! Please login.');
     res.redirect('/dashboard');
   } catch (error) {
-    console.error("❌ Signup Error:", error.message);
+    console.error(error);
     req.flash('error', 'Signup failed');
     res.redirect('/signup/student');
   }
@@ -50,24 +46,32 @@ exports.loginStudent = async (req, res) => {
     const student = await Student.findOne({ email });
 
     if (!student || student.password !== password) {
-      req.flash('error', 'Invalid email or password');
+      req.flash('error_msg', 'Invalid email or password');
       return res.redirect('/login/student');
     }
 
     req.session.studentId = student._id;
+    req.session.student = student;
 
-    req.flash('success', `Welcome, ${student.name}!`);
-    res.redirect('/dashboard');
+    // ✅ Redirect to the original requested page or default to /home
+    const redirectTo = req.session.redirectTo || '/home';
+    delete req.session.redirectTo;
+    res.redirect(redirectTo);
+
   } catch (error) {
-    console.error("❌ Login Error:", error.message);
-    req.flash('error', 'Login failed');
+    console.error(error);
+    req.flash('error_msg', 'Login failed');
     res.redirect('/login/student');
   }
 };
 
+
+
 exports.logoutStudent = (req, res) => {
   req.session.destroy(err => {
-    if (err) console.error("❌ Logout Error:", err.message);
-    res.redirect('/');
+    if (err) {
+      console.error("❌ Logout Error:", err.message);
+    }
+    res.redirect('/'); // ✅ Redirects to homepage
   });
 };

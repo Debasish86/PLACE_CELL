@@ -26,40 +26,57 @@
     <br /><br />
 
     <!-- Register Form -->
-    <!-- Replace old register form with this inside <body> -->
-
-    <!-- Register Form (Updated Design) -->
-    <div class="register-container">
-      <div class="logo">Place<span>Cell</span></div>
-      <div class="form-container">
-        <div class="form-card">
-          <div class="form-header">
-            <h2>Register</h2>
-            <a href="/login/college">LOGIN</a>
-          </div>
-          <p>Welcome to PlaceCell</p>
-          <form id="registerForm">
-            <label>Name*</label>
-            <input
-              type="text"
-              placeholder="Enter your Name Of The College"
-              required
-            />
-            <label>Email*</label>
-            <input type="email" placeholder="Enter your Email" required />
-            <label>Password*</label>
-            <input type="password" placeholder="Enter your Password" required />
-            <label>Repeat Password*</label>
-            <input
-              type="password"
-              placeholder="Enter your Password again"
-              required
-            />
-            <button type="submit">Create Account</button>
-          </form>
-        </div>
+<!-- Register Form (Fixed Design) -->
+<div class="register-container">
+  <div class="logo">Place<span>Cell</span></div>
+  <div class="form-container">
+    <div class="form-card">
+      <div class="form-header">
+        <h2>Register</h2>
+        <a href="/login/college">LOGIN</a>
       </div>
+      <p>Welcome to PlaceCell</p>
+
+      <!-- ✅ Added form action and method -->
+      <form id="registerForm" action="/signup/college" method="POST">
+        <label>Name*</label>
+        <!-- ✅ Added name="name" -->
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your Name Of The College"
+          required
+        />
+
+        <label>Email*</label>
+        <!-- ✅ Added name="email" -->
+        <input type="email" name="email" placeholder="Enter your Email" required />
+
+        <label>Password*</label>
+        <!-- ✅ Added name="password" -->
+        <input type="password" name="password" placeholder="Enter your Password" required />
+
+        <label>Repeat Password*</label>
+        <!-- ✅ This field is optional to validate on frontend -->
+        <input
+          type="password"
+          name="confirmPassword"
+          placeholder="Enter your Password again"
+          required
+        />
+
+        <!-- ✅ Optional field from backend schema -->
+        <!-- <label>College Code*</label>
+        <input type="text" name="code" placeholder="Enter your College Code" required />
+
+        <label>Phone*</label>
+        <input type="text" name="phone" placeholder="Enter your Phone Number" required /> -->
+
+        <button type="submit">Create Account</button>
+      </form>
     </div>
+  </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer">

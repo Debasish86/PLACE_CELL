@@ -15,24 +15,30 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="nav-wrapper">
-          <div class="logo">
-            <a href="/" style="text-decoration: none; color: inherit">
-              <h1><span class="logo-accent">Place</span>Cell</h1>
-            </a>
-          </div>
-
-          <nav class="nav-desktop">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/training" class="nav-link">Training</a>
-            <a href="/placement" class="nav-link">Placement</a>
-            <a href="/statistics" class="nav-link">Statistics</a>
-            <a href="/hirewithus" class="nav-link">Hire with Us</a>
-          </nav>
-
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo">
+          <a href="/" style="text-decoration: none; color: inherit">
+            <h1><span class="logo-accent">Place</span>Cell</h1>
+          </a>
+        </div>
+  
+        <nav class="nav-desktop">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/training" class="nav-link">Training</a>
+          <a href="/placement" class="nav-link">Placement</a>
+          <a href="/statistics" class="nav-link">Statistics</a>
+          <a href="/hirewithus" class="nav-link">Hire with Us</a>
+        </nav>
+  
+        <% if (student) { %>
+          <span class="user-greet">👋 <%= student.name %></span>
+          <a href="/logout">
+            <button class="login-btn">Logout</button>
+          </a>
+        <% } else { %>
           <a href="/login/student">
             <button class="login-btn">
               <svg
@@ -49,43 +55,24 @@
               Login
             </button>
           </a>
-
-          <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <nav class="nav-mobile" id="mobileNav">
-          <a href="/training" class="nav-link">Training</a>
-          <a href="/placement" class="nav-link">Placement</a>
-          <a href="/statistics" class="nav-link">Statistics</a>
-          <a href="/hirewithus" class="nav-link">Hire with Us</a>
-          <button class="login-btn mobile">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-            Login
-          </button>
-        </nav>
+        <% } %>
+  
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
     <!-- Hire With Us Hero Section -->
     <section class="hire-hero" id="hire">
       <div class="hire-container">
         <h2 class="main-heading">Fuel Your Growth with Us</h2>
         <p class="subtext">"Invite you to recruit the leaders of tomorrow."</p>
-        <a href="/signup/company">
-          <button class="signup-btn">Sign Up</button>
+        <a href="/login/company">
+          <button class="signup-btn">Login</button>
         </a>
       </div>
     </section>

@@ -28,9 +28,7 @@
   
 
   <!-- Register Form -->
- <!-- Replace old register form with this inside <body> -->
-
-<!-- Register Form (Updated Design) -->
+<!-- Register Form (Fixed Design) -->
 <div class="register-container">
   <div class="logo">Place<span>Cell</span></div>
   <div class="form-container">
@@ -40,22 +38,31 @@
         <a href="/signup/company">REGISTER</a>
       </div>
       <p>Welcome to PlaceCell</p>
-      <form id="registerForm">
+      
+      <!-- ✅ Corrected form tag -->
+      <form id="registerForm" action="/login/company" method="POST">
         <label>Email*</label>
-        <input type="email" placeholder="Enter your Email" required />
+        <!-- ✅ Added name="email" -->
+        <input type="email" name="email" placeholder="Enter your Email" required />
+        
         <label>Password*</label>
-        <input type="password" placeholder="Enter your Password" required />
-         <a href="#" class="forgot-password">Forgot Password?</a>
-         <div class="login-section">
-          <button class="login-btn">LOGIN</button>
-          <p>New to PlaceCell? <a href="/signup/college" class="register-link">Register Here</a></p>
+        <!-- ✅ Added name="password" -->
+        <input type="password" name="password" placeholder="Enter your Password" required />
+        
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        
+        <div class="login-section">
+          <button class="login-btn" type="submit">LOGIN</button>
+          <p>New to PlaceCell? 
+            <a href="/signup/college" class="register-link">Register Here</a>
+          </p>
         </div>
       </form>
-    </div>
-      </form>
+      
     </div>
   </div>
 </div>
+
 
 
 

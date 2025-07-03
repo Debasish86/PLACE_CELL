@@ -15,7 +15,6 @@
     />
   </head>
   <body>
-    <!-- Header -->
     <header class="header">
       <div class="container">
         <div class="nav-wrapper">
@@ -24,66 +23,52 @@
               <h1><span class="logo-accent">Place</span>Cell</h1>
             </a>
           </div>
-
+    
           <nav class="nav-desktop">
-            <!-- <a href="/" class="nav-link">Home</a> -->
+            <a href="/" class="nav-link">Home</a>
             <a href="/training" class="nav-link">Training</a>
-            
             <a href="/placement" class="nav-link">Placement</a>
             <a href="/statistics" class="nav-link">Statistics</a>
             <a href="/hirewithus" class="nav-link">Hire with Us</a>
           </nav>
-
-          <a href="/login/student">
-            <button class="login-btn">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              Login
-            </button>
-          </a>
-
+    
+          <% if (student) { %>
+            <span class="user-greet">👋 <%= student.name %></span>
+            <a href="/logout">
+              <button class="login-btn">Logout</button>
+            </a>
+          <% } else { %>
+            <a href="/login/student">
+              <button class="login-btn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Login
+              </button>
+            </a>
+          <% } %>
+    
           <button class="mobile-menu-btn" id="mobileMenuBtn">
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
-        <nav class="nav-mobile" id="mobileNav">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/training" class="nav-link">Training</a>
-          <a href="/placement" class="nav-link">Placement</a>
-          <a href="/statistics" class="nav-link">Statistics</a>
-          <a href="/hirewithus" class="nav-link">Hire with Us</a>
-          <button class="login-btn mobile">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-            Login
-          </button>
-        </nav>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
+       
         <div class="hero-content">
           <div class="hero-text">
             <h1 class="hero-title">
@@ -298,7 +283,7 @@
               <div class="company-card">
                 <div class="company-header">
                   <img
-                    src="/images/clogo/logo2.png"
+                    src="/images/clogo/logo8.png"
                     alt="Wipro"
                     class="company-logo"
                   />
@@ -386,32 +371,12 @@
                 </a>
               </div>
 
-              <div class="company-card">
-                <div class="company-header">
-                  <img
-                    src="/images/clogo/logo6.png"
-                    alt="Cyient"
-                    class="company-logo"
-                  />
-                  <div class="company-info">
-                    <h3>Cyient</h3>
-                    <p>Engineering</p>
-                  </div>
-                </div>
-                <div class="company-details">
-                  <div class="company-detail">
-                    Engineering and technology solutions
-                  </div>
-                </div>
-                <a href="https://www.cyient.com/careers" target="_blank">
-                  <button class="company-btn">Visit Careers</button>
-                </a>
-              </div>
+              
 
               <div class="company-card">
                 <div class="company-header">
                   <img
-                    src="/images/clogo/logo7.png"
+                    src="/images/clogo/logo15.png"
                     alt="HCL"
                     class="company-logo"
                   />
@@ -433,7 +398,7 @@
               <div class="company-card">
                 <div class="company-header">
                   <img
-                    src="/images/clogo/logo8.png"
+                    src="/images/clogo/logo16.png"
                     alt="Tech Mahindra"
                     class="company-logo"
                   />
@@ -455,7 +420,7 @@
               <div class="company-card">
                 <div class="company-header">
                   <img
-                    src="/images/clogo/logo9.png"
+                    src="/images/clogo/logo17.png"
                     alt="IBM"
                     class="company-logo"
                   />

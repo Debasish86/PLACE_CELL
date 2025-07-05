@@ -97,15 +97,70 @@
 <!-- Todo & Notification Container -->
 <div class="todo-notification-wrapper">
   <!-- Notification -->
-  <div class="notification-box">
-    <div class="notification-header">
-      <span class="dot"></span>
-      <p>NOTIFICATIONS</p>
-      <span class="now">now</span>
-    </div>
-    <div class="todo-item">Todo List <input type="checkbox" /></div>
-    <div class="todo-item">Todo List <input type="checkbox" /></div>
+<!-- Notification -->
+<div class="notification-box">
+  <div class="notification-header">
+    <span class="dot"></span>
+    <p>NOTIFICATIONS</p>
+    <span class="now">now</span>
   </div>
+
+  <% jobs.forEach(function(job) { %>
+    <div class="todo-item" onclick="showJobDetails('<%= job._id %>')">
+      <strong><%= job.title %></strong> at <%= job.companyName %>
+      <br />
+      <small><%= new Date(job.postedAt).toLocaleString() %></small>
+      <input type="checkbox" />
+    </div>
+  <% }) %>
+</div>
+
+<!-- Job Modal -->
+<div id="jobModal" class="job-modal" style="display: none;">
+  <div class="job-modal-content">
+    <span class="close-btn" onclick="closeJobModal()">&times;</span>
+    <h2 id="job-title"></h2>
+    <p id="job-company"></p>
+    <p id="job-location"></p>
+    <p id="job-salary"></p>
+    <p id="job-openings"></p>
+    <p id="job-last-date"></p>
+    <p id="job-description"></p>
+    <p><a id="job-apply-link" href="#" target="_blank">Apply Now</a></p>
+  </div>
+</div>
+
+<script>
+  const jobsData = JSON.parse(`<%- JSON.stringify(jobs).replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/<\/script>/g, '<\\/script>') %>`);
+
+  function showJobDetails(jobId) {
+    const job = jobsData.find(j => j._id === jobId);
+    if (job) {
+      document.getElementById("job-title").textContent = job.title;
+      document.getElementById("job-company").textContent = "Company: " + job.companyName;
+      document.getElementById("job-location").textContent = "Location: " + job.location;
+      document.getElementById("job-salary").textContent = "Salary: " + (job.salary || "Not disclosed");
+      document.getElementById("job-openings").textContent = "Openings: " + (job.numberOfOpenings || "N/A");
+      document.getElementById("job-last-date").textContent = "Last Date to Apply: " + new Date(job.lastDateToApply).toLocaleDateString();
+      document.getElementById("job-description").textContent = job.description;
+      document.getElementById("job-apply-link").href = job.applyLink || "#";
+      document.getElementById("jobModal").style.display = "flex";
+    }
+  }
+
+  function closeJobModal() {
+    document.getElementById("jobModal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("jobModal");
+    if (event.target === modal) {
+      closeJobModal();
+    }
+  };
+</script>
+
+
 
   <!-- Todo panel -->
   <div class="todo-panel">
@@ -335,6 +390,6 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
     <script src="/js/calender.js"></script>
     <!-- <script src="/js/recentDates.js"></script> -->
-
+    
   </body>
 </html>

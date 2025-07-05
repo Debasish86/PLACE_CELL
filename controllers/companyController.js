@@ -66,23 +66,42 @@ exports.loginCompany = async (req, res) => {
 
 
 
-
 exports.postJob = async (req, res) => {
   try {
-    const { title, companyName, location, description, notification } = req.body;
+    const {
+      title,
+      companyName,
+      location,
+      description,
+      notification,
+      jobId,
+      lastDateToApply,
+      applyLink,
+      salary,
+      numberOfOpenings
+    } = req.body;
 
     const job = new Job({
       title,
       companyName,
       location,
       description,
-      notification
+      notification,
+      jobId,
+      lastDateToApply,
+      applyLink,
+      salary,
+      numberOfOpenings
     });
 
     await job.save();
-    res.redirect("/company"); // or show a success message
+
+    req.flash('success_msg', 'Job posted successfully!');
+    res.redirect("/company");
   } catch (error) {
     console.error("Error posting job:", error);
-    res.status(500).send("Internal Server Error");
+    req.flash('error_msg', 'Failed to post job. Please try again.');
+    res.status(500).redirect("/company");
   }
 };
+

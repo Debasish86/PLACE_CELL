@@ -75,7 +75,6 @@
       
     </div>
   </section> -->
-
   <div class="job-post-box">
     <h2>Post a Job</h2>
     <form action="/company/post-job" method="POST">
@@ -96,6 +95,31 @@
       </div>
   
       <div class="job-field">
+        <label for="jobId">Job ID</label>
+        <input type="text" name="jobId" id="jobId" required />
+      </div>
+  
+      <div class="job-field">
+        <label for="salary">Salary</label>
+        <input type="text" name="salary" id="salary" required />
+      </div>
+  
+      <div class="job-field">
+        <label for="numberOfOpenings">Number of Openings</label>
+        <input type="number" name="numberOfOpenings" id="numberOfOpenings" required />
+      </div>
+  
+      <div class="job-field">
+        <label for="lastDateToApply">Last Date to Apply</label>
+        <input type="date" name="lastDateToApply" id="lastDateToApply" required />
+      </div>
+  
+      <div class="job-field">
+        <label for="applyLink">Application Link</label>
+        <input type="url" name="applyLink" id="applyLink" required />
+      </div>
+  
+      <div class="job-field">
         <label for="description">Job Description</label>
         <textarea name="description" id="description" rows="4" required></textarea>
       </div>
@@ -108,6 +132,7 @@
       <button type="submit">Submit Job</button>
     </form>
   </div>
+  
   
 
     <!-- Footer -->

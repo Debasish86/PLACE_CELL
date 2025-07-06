@@ -105,3 +105,9 @@ exports.postJob = async (req, res) => {
   }
 };
 
+
+// Render post job page
+exports.getPostJobPage = (req, res) => {
+  // You can pass company info if needed: req.session.company
+  res.render('pages/company');
+};

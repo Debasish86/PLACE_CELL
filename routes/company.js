@@ -17,5 +17,8 @@ router.post('/login/company', companyController.loginCompany);
 router.get('/company', (req, res) => {
     res.render('pages/dashboardCompany', { company: req.session.company });
   });
+router.post("/company/post-job", companyController.postJob);
+// GET route to render post job page
+router.get('/company/post-job', companyController.getPostJobPage);
 
 module.exports = router;

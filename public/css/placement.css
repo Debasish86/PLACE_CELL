@@ -1279,6 +1279,39 @@ section.placement-section {
     border-top-color: #3b82f6;
     animation: spin 1s ease-in-out infinite;
 }
+.job-modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .job-modal-content {
+    background-color: white;
+    color: black;
+    padding: 25px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
 
 @keyframes spin {
     to { transform: rotate(360deg); }
@@ -1304,7 +1337,7 @@ a:focus {
   
   .user-greet-link:hover {
     text-decoration: underline;
-  }
+  } 
 /* Print Styles */
 @media print {
     .header,

@@ -1,5 +1,5 @@
 const Company = require('../models/Company');
-
+const Job = require("../models/Job");
 // Render signup page
 exports.getSignupPage = (req, res) => {
   res.render('pages/signupCompany');
@@ -62,4 +62,52 @@ exports.loginCompany = async (req, res) => {
     req.flash('error_msg', 'Login failed. Please try again.');
     res.redirect('/login/company');
   }
+};
+
+
+
+exports.postJob = async (req, res) => {
+  try {
+    const {
+      title,
+      companyName,
+      location,
+      description,
+      notification,
+      jobId,
+      lastDateToApply,
+      applyLink,
+      salary,
+      numberOfOpenings
+    } = req.body;
+
+    const job = new Job({
+      title,
+      companyName,
+      location,
+      description,
+      notification,
+      jobId,
+      lastDateToApply,
+      applyLink,
+      salary,
+      numberOfOpenings
+    });
+
+    await job.save();
+
+    req.flash('success_msg', 'Job posted successfully!');
+    res.redirect("/company");
+  } catch (error) {
+    console.error("Error posting job:", error);
+    req.flash('error_msg', 'Failed to post job. Please try again.');
+    res.status(500).redirect("/company");
+  }
+};
+
+
+// Render post job page
+exports.getPostJobPage = (req, res) => {
+  // You can pass company info if needed: req.session.company
+  res.render('pages/company');
 };

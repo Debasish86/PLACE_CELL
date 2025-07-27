@@ -1,37 +1,38 @@
 const Student = require('../models/Student');
+const bcrypt = require('bcrypt');
 
 exports.getSignupPage = (req, res) => {
   res.render('pages/signupStudent');
 };
 
 exports.signupStudent = async (req, res) => {
-  try {
-    const { name, email, password, phone, regd_no, semester } = req.body;
-    const college_id = req.body.college_id || null;
+  const { name, email, password, phone, regd_no, semester, college_id } = req.body;
 
-    // Check if student already exists
+  try {
     const existing = await Student.findOne({ email });
     if (existing) {
-      req.flash('error', 'Email already registered');
+      req.flash('error_msg', 'Email already registered');
       return res.redirect('/signup/student');
     }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const newStudent = new Student({
       name,
       email,
-      password,
+      password: hashedPassword,
       phone,
       regd_no,
       semester,
-      college_id
+      college_id: college_id || null
     });
 
     await newStudent.save();
-    req.flash('success', 'Signup successful! Please login.');
-    res.redirect('/dashboard');
+    req.flash('success_msg', 'Signup successful! Please login.');
+    res.redirect('/login/student');
   } catch (error) {
-    console.error(error);
-    req.flash('error', 'Signup failed');
+    console.error('Signup Error:', error.message);
+    req.flash('error_msg', 'Signup failed. ' + error.message);
     res.redirect('/signup/student');
   }
 };
@@ -41,37 +42,38 @@ exports.getLoginPage = (req, res) => {
 };
 
 exports.loginStudent = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    const student = await Student.findOne({ email });
+  const { email, password } = req.body;
 
-    if (!student || student.password !== password) {
-      req.flash('error_msg', 'Invalid email or password');
+  try {
+    const student = await Student.findOne({ email });
+    if (!student) {
+      req.flash('error_msg', 'No account found with this email.');
+      return res.redirect('/login/student');
+    }
+
+    const isMatch = await bcrypt.compare(password, student.password);
+    if (!isMatch) {
+      req.flash('error_msg', 'Incorrect password.');
       return res.redirect('/login/student');
     }
 
     req.session.studentId = student._id;
     req.session.student = student;
 
-    // ✅ Redirect to the original requested page or default to /home
-    const redirectTo = req.session.redirectTo || '/home';
-    delete req.session.redirectTo;
-    res.redirect(redirectTo);
-
+    req.flash('success_msg', 'Login successful!');
+    res.redirect('/dashboard');
   } catch (error) {
-    console.error(error);
-    req.flash('error_msg', 'Login failed');
+    console.error('Login Error:', error.message);
+    req.flash('error_msg', 'Something went wrong.');
     res.redirect('/login/student');
   }
 };
 
-
-
 exports.logoutStudent = (req, res) => {
   req.session.destroy(err => {
     if (err) {
-      console.error("❌ Logout Error:", err.message);
+      console.error("Logout Error:", err.message);
     }
-    res.redirect('/'); // ✅ Redirects to homepage
+    res.redirect('/');
   });
 };

@@ -1295,7 +1295,16 @@ a:focus {
     outline: 2px solid #3b82f6;
     outline-offset: 2px;
 }
-
+.user-greet-link {
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1rem;
+    color: white;
+  }
+  
+  .user-greet-link:hover {
+    text-decoration: underline;
+  }
 /* Print Styles */
 @media print {
     .header,

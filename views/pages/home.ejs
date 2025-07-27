@@ -33,7 +33,9 @@
           </nav>
     
           <% if (student) { %>
-            <span class="user-greet">👋 <%= student.name %></span>
+            <a href="/profile" class="user-greet-link">
+              👋 <%= student.name %>
+            </a>
             <a href="/logout">
               <button class="login-btn">Logout</button>
             </a>
@@ -65,33 +67,42 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-       
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1 class="hero-title">
-              Launch your <br />
-              <span class="gradient-text">Professional Career.</span>
-            </h1>
-            <!-- <p class="hero-description">
-                        Where preparation meets opportunity - driving student success with real-world connections.
-                    </p> -->
-            <div class="hero-buttons">
-              <a href="/signup/student"
-                ><button class="btn-primary">Get Started</button></a
-              >
+       <!-- Hero Section -->
+       <section class="hero">
+        <div class="container">
+          <section class="dashboard">
+              <div class="container">
+                <% if (student) { %>
+                  <h1>Welcome, <%= student.name %>!</h1>
+                <% } else { %>
+                  <h1>Welcome, Guest!</h1>
+                <% } %>
+                
+                <!-- Add more student data here as needed -->
+              </div>
+            </section>
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">
+                Launch your <br />
+                <span class="gradient-text">Professional Career.</span>
+                
+              </h1>
+              <% if (!student) { %>
+                <a href="/signup/student" class="register-btn">Register Now</a>
+              <% } %>
+              <!-- <p class="hero-description">
+                          Where preparation meets opportunity - driving student success with real-world connections.
+                      </p> -->
+             
+            </div>
+  
+            <div class="hero-illustration">
+              <img src="/images/Frame.png" alt="Image" />
             </div>
           </div>
-
-          <div class="hero-illustration">
-            <img src="/images/Frame.png" alt="Image" />
-          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
    <!-- Statistics Section -->
    <section class="stats-section" id="statistics">
     <div class="container">
